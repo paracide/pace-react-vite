@@ -1,0 +1,214 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <title>CSS Box Model - Intermediate HTML5/CSS</title>
+    <meta charset="utf-8">
+    
+    <style>
+      
+      body{
+        font-family: Tahoma, Arial, Helvetica, sans-serif;
+      }
+      
+      #box{
+        background-color: #fdd;
+        width: 250px;
+        color: #f00;
+        
+      /* If width is specified with percentage, the box will use whatever 
+         parent it can find that also has width. This does not need to be 
+         the immediate parent. It can be any "ancestor". If none is found, 
+         the box will use the viewport width to determine the percentage. 
+         Because of this behaviour, it's better to LEAVE the WIDTH OUT, 
+         if you want the box to be the exact same width as the parent. */        
+        
+/*        height: 250px;*/
+        
+      /* If you are NOT using height, any box will expand vertically to 
+         contain the content. This is a good practice if you not sure how 
+         much text will be added. For example, "content" areas of a web 
+         page. Other elements would need height, such as header, navigation 
+         bars, footers, etc. Generally, it's better to let the content 
+         dictate the height in most cases. 
+         
+         If you *have* height, and you have too much content to be 
+         contained in the box at that height, the content will "OVERFLOW" 
+         the box, and "spill out" of the bottom. The CSS property to 
+         control this, is called "overflow" (more on this later) */        
+        
+
+        /*        overflow */
+        /* Overflow values:
+           - hidden: Overflowing content not visible. 
+           - visible: default. Overflowing content is visible. 
+           - scroll: Box will scroll in both directions, on Windows. 
+           - auto: Most useful. Good for self-contained content that needs 
+             to scroll. Be careful with this on mobile, because it can 
+             make the page more difficult to scroll. */  
+        
+/*        overflow: auto;*/       
+        
+        /**************** PADDING ******************/
+        /* Padding is the spave between the content, and the border (visible or not)
+        of the box. */
+        
+        /* The easest way to set padding, is for all 4 sides: */
+/*        padding: 15px;*/
+
+        /* The above is CSS "Shorthand". We can also specify each side 
+           separately. */
+        
+/*
+        padding-top: 10px;
+        padding-right: 20px;
+        padding-bottom: 7px;
+        padding-left: 10px;
+*/
+        /* The above can be shortened using a 4 value combination. This is 
+           called "CSS Shorthand". */
+        /* We can use a handy memory device to remember the proper order of
+           these 4 box sides. 
+           I call this "TROUBLE", or "TRBL": "Top, Right, Bottom, Left".
+        */ 
+        padding: 10px 20px 7px 10px;
+
+        
+        /* The above can be shortened using a 4 value combination. This is 
+           called "CSS Shorthand". */
+        /* We can use a handy memory device to remember the proper order of
+           these 4 box sides. 
+           I call this "TROUBLE", or "TRBL": "Top, Right, Bottom, Left".
+        */ 
+        
+        /* By default, the width of a box will be the addition of the 
+           "width" property, AND any padding in the box. So if the box is 
+           300px wide, plus 15 pixels of PADDING on both sides, this would 
+           effectively make the box 330 pixels wide. For years, developers 
+           have had to work around this, by subtracting the padding from 
+           the width (ie: 270px with 30px padding). */
+        
+        /* REMEMBER: If a box has NO width, or the default (width: auto),
+           then the padding/border will NOT add to the width of the box. 
+           This will simply take the width of the parent, or extend as wide 
+           as it can go. (it won't overlap any parent padding, unless you have
+           more padding than the width of the parent). As soon as 
+           we give a box WIDTH, then the padding and border WILL add to the 
+           size of the box. So if all you want is to have a child extend to 
+           the edges of a PARENT, simply don't give it a width. */        
+        
+      /************* BORDERS ***************/
+        
+/*
+        border-top-width: 10px;
+        border-right-width: 20px;
+        border-bottom-width: 8px;
+        border-left-width: 5px;
+        
+        border-top-style: solid;
+        border-right-style: dotted;
+        border-bottom-style: dashed;
+        border-left-style: double;
+        
+        border-top-color: #000;
+        border-right-color: #666;
+        border-bottom-color: #090;
+        border-left-color: #006;        
+*/
+        /* We can "shorthand" the above long border code using TRBL to this: */
+/*
+        border-width: 10px 20px 8px 5px;
+        border-style: solid dotted dashed double;
+        border-color: #000 #666 #090 #006;
+*/
+/*        simple border, same on all 4 sides  *
+/*
+        border-width: 10px;
+        border-style: solid;
+        border-color: #000;
+*/
+        /* If all you want is a consistent border, all 4 sides the same, 
+           there is no need to write so much. You can "shorthand" the 
+           entire border like so: */
+        border: 10px solid #000;
+        
+        /* If certain border properties are left out, the browser falls to 
+           defaults. */
+      
+/*
+         border-width: 10px;
+         border-style: solid;
+*/
+      /* In this case, if border-color is left out, the border will take 
+         the current TEXT color of the element we are adding the border to. 
+         If that element has NO text color, then it will go to the parent. */      
+
+        /****************** MARGIN ********************/
+/*        
+        To set margin equally on all 4 sides, just padding, use only "margin". 
+
+        margin: 20px;*/
+        
+/*
+        margin-top: 25px;
+        margin-right: 0;
+        margin-bottom: 20px;
+        margin-left: 0;
+*/
+        
+        
+        margin: 25px 0 20px 0;
+
+        /* CSS3 brought us a new property, called box-sizing. We can use 
+           this to change how padding effects the width of the box. When 
+           set to "border-box", the width will remain whatever was set, 
+           regardless of padding/border. content-box is the default.
+           In that case, the CONTENT would be taking the "width" property, 
+           and the box would grow larger around it, if border/padding are added */           
+        box-sizing: border-box;
+        
+      /* Remember, without box-sizing:border-box; CSS-box objects ADD UP 
+         the padding and borders to the width of the box. So, a 300px box 
+         with 10px padding left and right, becomes a 320px wide box, even 
+         with a width of 300px. If we add a border of 5px left and right, 
+         it now becomes a 300 + 10 + 10 + 5 + 5 box, or 330px wide box. */
+        
+        /* Important point: Padding ONLY adds to the width of a box 
+           (assuming no box-sizing  used), if WIDTH is used. If there is 
+           NO WIDTH on a box (or width: auto (default)), the padding will 
+           NOT make the box larger. */
+      }
+      
+      #innerbox{
+        background-color: #99c;
+        padding: 30px;
+        /* The easiest way to get this inner box to sit "nicely" inside the main box, 
+           is to just avoid giving it width. In that case, the padding will not add to the 
+           width. As soon as at a "width" property, the box gets wider than the parent. 
+           If we NEEDED to have width, we could simply add box-sizing: border-box. */
+        width: 100%;
+        box-sizing: border-box;
+      }
+      
+    </style>
+  </head>
+  
+  <body>
+    <h1>Basic CSS Box</h1>
+    
+    <div id="box">
+      This is some text in the box (DIV)
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam voluptatem nihil libero recusandae minima labore tempora voluptas possimus sed officiis a similique animi vel, sit delectus nemo, earum inventore. Reprehenderit!Vitae 
+      vero quam error. Fuga ipsa, distinctio quas perspiciatis amet accusantium esse voluptatibus eos ratione, reprehenderit incidunt! Culpa totam sapiente, perspiciatis dicta distinctio amet tempora. Impedit rerum, sit illo. Impedit.
+      <div id="innerbox">This box is inside another box<br>More</div>
+    </div>
+<!--    p*4>lorem  -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore maiores incidunt perferendis, officiis nulla ducimus pariatur vel. Enim possimus, in dolorem. Labore totam, doloribus odio impedit. Animi nesciunt, atque minima!</p>
+    <p>Sit repudiandae ab, consequatur autem. Labore, qui nobis totam autem modi eos veniam molestiae quas aut laudantium quis sint possimus quasi nulla maxime, ab voluptates mollitia, impedit maiores, eum soluta.</p>
+    <p>Consequuntur est ducimus culpa rerum, nam amet debitis perspiciatis, recusandae tempora vero incidunt molestias velit magni iste numquam eligendi alias nemo aliquid labore quisquam. Consectetur quae dolorum similique ut perspiciatis!</p>
+    <p>Veniam maiores dolorem, dolore! Dicta ad, quod a, architecto minima id sint atque qui, aliquam magnam nemo voluptas dolore veniam excepturi at delectus illum vel aspernatur, porro expedita! Voluptatibus, similique!</p>
+    
+  </body>
+
+</html>

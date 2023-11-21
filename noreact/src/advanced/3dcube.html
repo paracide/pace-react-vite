@@ -1,0 +1,121 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <title>3D Cube</title>
+    <meta charset="utf-8">
+    
+    <style>
+      @-webkit-keyframes rotate_cube{
+        from{
+          transform: rotateY(1turn) rotateX(1turn);
+        }
+      }      
+      
+      @keyframes rotate_cube{
+        from{
+          transform: rotateY(1turn) rotateX(1turn);
+        }
+      }
+      
+      body{
+        font-family: Tahoma, Arial, Helvetica, sans-serif;
+        background: linear-gradient(#ddd,#999);
+        height: 100vh;
+      }
+      #wrapper{
+        margin: 0 auto;
+        position: relative;
+        min-height: 600px;
+        max-width: 960px;
+        background-color: #fff;
+      }
+      #container{
+        perspective: 500px;
+        position: absolute;
+        top: 150px;
+        width: 250px;
+        height: 250px;
+        left: 38%;
+      }
+      
+      #cube{
+        width: 250px;
+        height: 250px;
+        position: absolute;
+        -webkit-transform: rotateY(0deg) rotateX(0deg);
+        transform: rotateY(0deg) rotateX(0deg);
+        /* without preserve-3d, child elements of a 3d transformed object (cube in
+           this case), are "flat". This means they cannot be 3D transformed. To 
+           allow child elements to be 3d, we need "transform-style: preserve-3d". */
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-animation: rotate_cube 7s linear infinite;
+        animation: rotate_cube 7s linear infinite;
+      }
+      /* Target all cube sides at the same time. All are DIVs inside #cube. */
+      #cube div{
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        color: #fff;
+        background: radial-gradient(rgba(200,100,100,0.4),#855);
+        font-size: 2em;
+        text-align: center;
+        border: 1px solid #778;
+        line-height: 250px;
+      }
+      
+      #front{
+        -webkit-transform: translateZ(125px);
+        transform: translateZ(125px);
+      }
+      #back{
+        -webkit-transform: rotateY(180deg) translateZ(125px);
+        transform: rotateY(180deg) translateZ(125px);
+      }
+      #left{
+        -webkit-transform: rotateY(90deg) translateZ(125px);
+        transform: rotateY(90deg) translateZ(125px);
+      }
+      #right{
+        -webkit-transform: rotateY(-90deg) translateZ(125px);
+        transform: rotateY(-90deg) translateZ(125px);
+      }
+      #bottom{
+        -webkit-transform: rotateX(-90deg) translateZ(125px);
+        transform: rotateX(-90deg) translateZ(125px);
+      }
+      #top{
+        -webkit-transform: rotateX(90deg) translateZ(125px);
+        transform: rotateX(90deg) translateZ(125px);
+      }
+      
+    </style>
+  </head>
+  
+  <body>
+    <div id="wrapper">
+      <h1>Basic 3D Cube</h1>
+      <!-- 3D Container -->
+      <div id="container">
+      
+        <!-- This will be the whole "cube" object -->
+        <div id="cube">
+        <!--  div[id="x"]{x}*6     -->
+          <div id="front">Front</div>
+          <div id="left">Left</div>
+          <div id="right">Right</div>
+          <div id="back">Back</div>
+          <div id="top">Top</div>
+          <div id="bottom">Bottom</div>
+        </div> <!-- end cube -->
+      
+      </div> <!-- end container -->
+      
+    </div> <!-- End Wrapper -->
+    
+  </body>
+
+</html>

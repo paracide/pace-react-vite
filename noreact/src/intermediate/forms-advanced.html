@@ -1,0 +1,182 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <title>HTML5 Forms - Intro HTML</title>
+    <meta charset="utf-8">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      form fieldset {
+        background-color: #eef;
+        max-width: 500px;
+        border: 2px solid black;
+        margin-bottom: 15px;
+      }
+
+      form legend {
+        background-color: #500;
+        color: #fff;
+        padding: 10px;
+      }
+
+      form input[type="text"],
+      form input[type="password"] {
+        width: 230px;
+        background-color: #fee;
+        font-size: 0.9em;
+        border: 1px solid black;
+      }
+
+      form label{
+        width: 125px;
+        display: block;
+        clear: both;
+        float: left;
+        text-align: right;
+        padding-right: 0.5em;
+      }
+
+      input +label{
+        float: none;
+        display: inline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>HTML Form Example - Complex</h1>
+
+    <form action="http://scott-media.com/test/form_display.php"
+          autocomplete="on"
+          id="complex_form"
+          method="post"
+    >
+      <fieldset>
+        <legend>Personal Information</legend>
+        <p>
+          <label for="first_name">*First Name: </label>
+          <input autocomplete="on"
+                 id="first_name"
+                 maxlength="45"
+                 name="first_name"
+                 placeholder="Type your first name"
+                 readonly
+                 required
+                 size="25"
+                 type="text"
+                 value="Arthur">
+        </p>
+
+        <p>
+          <label for="last_name">last Name: </label>
+          <input id="last_name"
+                 maxlength="45"
+                 name="last_name"
+                 placeholder="Type your last name"
+                 size="25"
+                 title="what this a "
+                 type="text">
+        </p>
+
+        <p>
+          <label for="username">Username: </label>
+          <input autocomplete="off"
+                 id="username"
+                 maxlength="16"
+                 name="username"
+                 placeholder="Maximum 16 letters"
+                 size="16"
+                 tabindex="1"
+                 type="text">
+        </p>
+
+        <p>
+          <label for="email_address">Email Address: </label>
+          <input id="email_address" name="email_address" size="25" tabindex="3" type="email">
+        </p>
+
+        <p>
+          <label for="phone">Phone: </label>
+          <input id="phone" name="phone" size="25" tabindex="2" type="tel">
+        </p>
+
+        <p>
+          <label for="student_id">Student ID: </label>
+          <input id="student_id" max="99" name="student_id" size="25" type="number">
+        </p>
+
+        <p>
+          <label for="birth">Birth Date</label>
+          <input id="birth" name="birth" type="date">
+        </p>
+
+        <p>
+          <label for="password">Password: </label>
+          <input id="password" maxlength="12" minlength="8" name="password" type="password">
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Additional Information</legend>
+        <p>
+          Please select appropriate age group: <br>
+          <input id="age_0_15" name="age" type="radio" value="baby">
+          <label for="age_0_15">0-15 years</label><br>
+
+          <input id="age_16_30" name="age" type="radio" value="youth">
+          <label for="age_16_30">16-30 years</label><br>
+
+          <input id="age_31_plus" name="age" type="radio" value="adult">
+          <label for="age_31_plus">31&plus; years</label>
+        </p>
+
+        <h2>Forcing a link to download</h2>
+        <p>
+          This link should be <a download href="../images/iphone.jpeg">downloaded</a>
+        </p>
+
+        <p>Which browsers you like</p>
+        <input id="browser_choice_chrome" name="browser_choice[]" type="checkbox" value="chrome">
+        <label for="browser_choice_chrome">Chrome</label>
+        <input id="browser_choice_edge" name="browser_choice[]" type="checkbox" value="edge">
+        <label for="browser_choice_edge">Edge</label>
+        <input id="browser_choice_safari" name="browser_choice[]" type="checkbox" value="safari">
+        <label for="browser_choice_safari">Safari</label>
+
+        <p>
+
+          <label for="income">Income: </label>
+          <!--multiple is strong-->
+          <select id="income" name="income" required>
+            <option value="">Select your income</option>
+            <optgroup label="Poor">
+              <option value="0_1000">0-1,000</option>
+              <option value="1000_2000">1,000-2,000</option>
+            </optgroup>
+            <optgroup label="Rich">
+              <option value="2000_3000">2,000-3,000</option>
+              <option value="3000_more">3,000+</option>
+            </optgroup>
+          </select>
+        </p>
+
+        <p>
+          <label for="comments"></label>
+          <!--like pre tag-->
+          <textarea cols="25" id="comments" maxlength="25" placeholder="what do you mean" rows="5"
+                    spellcheck></textarea>
+        </p>
+
+      </fieldset>
+
+      <p>
+        <input type="submit" value="Send Info"> &nbsp;
+        <input accesskey="c" type="reset" value="clear form">
+      </p>
+
+    </form>
+  </body>
+</html>

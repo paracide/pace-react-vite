@@ -1,0 +1,240 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <title>Responsive Page - Adv. HTML5/CSS3</title>
+  <meta charset="utf-8">
+  
+  <!-- This is THE most important tag for responsive design. Without this, devices will 
+       report a MUCH higher resolution. We need tham to report their "CSS Pixels" instead 
+       of "device pixels" (ie: iPhone 4 is 640 x 960, but its CSS pixels are 320 x 480).
+       width=device-width sets the viewport to the CSS pixels of the devie. initial-scale
+       sets the initial view of the page to proper size. maximum-scale=1 is supposed prevent
+       the page from going beyond "1" with a zoom, effectly preventing zooming of any kind. 
+       user-scalable=no does this as well. However, as of 2020, browsers no longer respect 
+       this. You cannot prevent a zoom this way.
+       Note: Preventing the user from zooming a mobile page is terrible usability, and even 
+       worse accessibility.  
+       UPDATE! In Nov. 2021, this feature is BACK. Booooo! 
+       UPDATE- 2022 Nov.: iPhone Safari/Chrome/etc is ignoring user-scalable and maximum-scale
+                          while Android Chrome is respecting it, preventing zoom. 
+                        
+       -->
+  <meta name="viewport" content="width=device-width">
+  
+  <!-- This is a "media type" for "print". It means if the page is printed, 
+       the browser will look for this CSS external file, and apply it to the printed
+       page. 
+       Some of the earlier media types were:
+       - projector - used for page view on a projector
+       - print - Still used. Applied when printed.
+       - all (default) - this is applying to every device. 
+       - screen - only screens (not printed) will apply. 
+       -->  
+<!--  <link rel="stylesheet" href="myprint.css" media="print">-->
+
+  
+  <style>
+    
+
+    
+    body{
+      font-family: Tahoma, Arial, sans-serif;
+      background: linear-gradient(#ddd,#666);
+      margin: 0;
+      
+    }
+    #wrapper{
+      max-width: 960px;
+      background-color: #fcc;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.7);
+      margin: 0 auto;
+      box-sizing: border-box;
+      padding: 1px 0px 1px 0px;
+      position: relative;
+/*      overflow:hidden;*/
+    }
+    header{
+      background-color:#ddd;
+      height: 120px;
+      text-align: center;
+
+    }
+    
+    header #logo{
+      width: 100px;
+      height: 100px;
+      background-image: url(images/logo_100.png);
+      position: absolute;
+      top: 8px;
+      left: 8px;
+    }
+    
+    
+    section#content{
+      padding: 1px 12px 1px 12px;
+    }
+    
+    footer{
+      height: 150px;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding-top: 25px;
+      box-sizing: border-box;
+
+    }
+    
+    /* Media Queries */
+    
+    /* Note: With @media all (or <link media="all") BOTH screens and printed pages 
+       will be affected. @media screen will ONLY target non-printed screens. (ie, 
+       every display device). It's better to use @media all and then provide a 
+       "print stylesheet" to override and change whatever you need to for print. 
+       More on this later .*/     
+    
+    /* This media query in effect BETWEEN 600 and 960px. */
+    @media screen and (max-width: 960px) and (min-width: 600px){
+      #wrapper{
+        background-color: #f00;
+      }
+    }
+    /* This will be in effect at a viewport size of 768 or LESS */
+    @media screen and (max-width: 768px){
+      header #logo{
+        background-image: url(images/logo_50.png);
+        background-repeat: no-repeat;
+        width: 50px;
+        height: 50px;
+      }
+    }
+    
+    @media screen and (width: 768px){
+      #wrapper{
+        background-color: #f0f;
+      }
+    }
+    
+
+    /* Note: There was a previous media query called device-width or 
+       max-device-width or min-device-width. These are all deprecated, and will 
+       cause your page to not validate. It is not recommended to use them anymore, 
+       although some media query tutorials may still mention them. DO NOT USE. */    
+/*
+    @media all and (device-width: 1537px){
+      #wrapper{
+        background-color: #0f0;
+      }
+    }
+*/
+    @media all and (orientation: portrait){
+      #box p.boxtext::after{
+        content: 'This device is in PORTRAIT mode';
+        font-size: 1.3em;
+        font-weight: bold;
+      }
+    }  
+    
+    @media all and (orientation: landscape){
+      #box p.boxtext::after{
+        content: 'This device is in LANDSCAPE mode';
+        font-size: 1.3em;
+        font-weight: bold;
+      }
+    }  
+    
+    @media all and (-webkit-min-device-pixel-ratio: 1){
+      #box2 p.boxtext::after{
+        content: 'This device is a LOW RESOLUTION device (device pixel ratio of 1 or more)';
+      }
+    }
+    @media all and (-webkit-min-device-pixel-ratio: 2){
+      #box2 p.boxtext::after{
+        content: 'This devices is a HIGH RESOLUTION device (device pixel ratio of 2 or more)';
+      }
+      header #logo{
+        background-image: url('images/logo_200.png');
+        background-size: 100px 100px;
+      }
+    }
+    
+    @media screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 767px){
+      header #logo{
+        background-image: url(images/logo_100.png);
+        background-size: 50px 50px;
+      }
+    }
+    
+    /* Older way to detect an Ipad. Easy, because ALL ipads a few years back had the
+       exact same CSS pixels. However, lately iPads have different resolutions */
+    /*
+    @media screen and (width: 768px) and (orientation: portrait){
+      #box2 p.boxtext::after{
+        content: "This is an IPAD in PORTRAIT mode.";
+      }     
+    }
+    
+    @media screen and (width: 1024px) and (orientation: landscape){
+      #box2 p.boxtext::after{
+        content: "This is an IPAD in LANDSCAPE mode.";
+
+      }     
+    }    
+*/
+    
+    /* Better way to detect multiple widths for something like an iPad. */
+    
+    /* Target the EXACT dimensions of an Ipad. We know that the iPad has a "css" 
+       resolution of 768px by 1024px. We can detect this exactly, and provide 
+       styles specifically for the iPad. */
+    /* If we want to use an OR in a media query instead of AND, we use a comma 
+       between media queries. Comma means OR. 
+       ex: @media screen and (width: 768px), (with: 1024px)  */    
+    @media screen and (width: 1024px), (width: 768px), (width: 820px), (width: 1080px){
+      #box2 p.boxtext::after{
+        content: "This looks like an iPad! Old or new, but not PRO.";
+      }
+    }
+    
+  </style>
+  
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+    
+      <div id="logo"></div>
+      This is the header
+    </header>
+    <section id="content">
+      <h1>Responsive Tests</h1>
+      <div id="box">
+        <p class="boxtext"></p>
+      </div>
+
+      <div id="box2">
+        <p class="boxtext"></p>
+      </div>
+      
+      <p>
+        <img src="images/epicearthmoonstill.jpg" width="400" height="400" alt="Earth and Moon" />
+      </p>
+      <!-- p*3>lorem -->
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda ipsa nam distinctio, nesciunt excepturi provident vero iusto minima eaque qui at quod quos, molestiae ipsum dolor hic, voluptates itaque quam!</p>
+      <p>Dolores repellat id alias, fuga aperiam quod nemo quam dicta aliquam aspernatur corrupti, vel dignissimos neque debitis ipsum quia sit reprehenderit minima sunt ipsa quasi hic? Fugit dolor itaque, ducimus.</p>
+      <p>Quibusdam alias omnis, odit inventore minima dolorum deleniti animi quis tenetur temporibus illum, rem distinctio atque ullam incidunt ea. Fugit iusto perferendis et, quo illum asperiores possimus sint distinctio quod?</p>
+      <p>Nihil modi omnis qui, aperiam vero aliquid? Earum nisi, placeat aliquid facilis magni fugit eius porro harum! Deleniti placeat ab beatae dignissimos, enim tenetur nesciunt quibusdam eos consequatur fuga dolore.</p>
+      <p>Fugiat illum facere, error, sapiente hic minima numquam nisi aliquam, rem nulla aperiam officiis non exercitationem doloremque libero. Quaerat iste soluta magni quae perferendis animi, deserunt dolor impedit architecto distinctio.</p>
+      <p>Dignissimos cumque eveniet iure nulla quisquam quos explicabo. Necessitatibus aperiam officiis earum. Ducimus est sit esse natus ipsum iusto beatae reiciendis, hic eius optio voluptatem debitis omnis id ab consequatur.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam odio maxime, consequuntur quae repellat non. Quos ex aut placeat expedita recusandae velit neque facilis, commodi sit soluta vitae voluptatibus at.</p>
+      <p>Deleniti ab repellendus, eius, porro iste illum sequi laboriosam. Quasi culpa dignissimos expedita amet, eligendi eaque mollitia assumenda, perferendis, obcaecati doloremque temporibus consectetur incidunt id. Sit, quo veritatis! Dolore, ad?</p>
+      <p>Possimus nam modi cumque earum excepturi! Atque blanditiis laudantium reprehenderit consequuntur nisi delectus voluptas suscipit iure nulla, nihil sed, commodi ducimus cum quisquam est unde necessitatibus, dicta beatae adipisci porro!</p>
+    </section>
+    <footer>
+      This is the footer
+    </footer>
+  </div>
+
+</body>
+</html>

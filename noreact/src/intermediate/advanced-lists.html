@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC>
+
+<html lang="en">
+  <head>
+    <title>CSS</title>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400&display=swap"
+          rel="stylesheet">
+
+    <style>
+      body {
+        font-family: Raleway, Arial, sans-serif;
+        font-weight: 400;
+      }
+
+      ul li {
+        list-style-type: circle;
+      }
+
+      ul li li {
+        list-style-type: disc;
+      }
+
+      ul li li li {
+        list-style-type: square;
+      }
+
+      ul li li li li {
+        list-style-type: circle;
+        color: #00c;
+      }
+
+      ol li {
+        list-style-type: decimal-leading-zero;
+      }
+
+      ol li li {
+        list-style-type: lower-alpha;
+      }
+
+      ul li + li {
+        color: #f00 ;
+      }
+
+      ul li + li + li{
+        color: #0c0 ;
+      }
+
+      ul li:last-child{
+        color: #066;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>More Complex Lists</h1>
+    <h2>Complex Unordered List</h2>
+    <h3>List of Electronics</h3>
+
+    <ul><!-- Start of: Main Electronics List -->
+      <li>Audio
+
+        <ul><!-- Start of: Nested Audio List -->
+          <li>Home Audio
+
+            <ul><!-- Start of: Nested Home Audio list -->
+              <li>Surround Sound
+
+                <!--Note: the "type" attribute is NOT valid in HTML5 -->
+                <ul><!-- Start of: Surround Sound Nested List -->
+                  <li>Sound Bars</li>
+                  <li>5.1 Surround</li>
+                  <li>7.1 Surround</li>
+                </ul><!--End of: Surround Sound Nested List -->
+
+              </li>
+              <li>Portable Audio</li>
+              <li>Record Players</li>
+            </ul> <!-- End of: Nested Home Audio List -->
+
+          </li>
+          <li>Car Audio</li>
+          <li>Professional Audio</li>
+          <li>Mobile Audio</li>
+        </ul><!-- End of: Nested Audio List -->
+
+      </li><!-- End of Audio list item -->
+      <li>Televisions</li>
+      <li>Computers</li>
+      <li>Appliances</li>
+      <li>Smartphones</li>
+    </ul><!-- End of: Main Electronics List -->
+
+    <h2>Complex Ordered Lists</h2>
+    <h3>How to Get Coffee</h3>
+
+    <ol>
+      <li>Open room door</li>
+      <li>Check Wallet</li>
+      <li>Go Downstairs</li>
+      <li>Enter Stella's</li>
+      <li>Stand in Queue</li>
+      <li>Order Coffee</li>
+    </ol>
+    <!-- Note: The "start" attribute IS still supported in HTML5,
+         but NOT in XHTML Strict.  -->
+    <!-- Note2: The "type" attribute in HTML5 is NOT supported in a <ul> but it
+         IS supported in an <ol>. This is HTML5 Only. In XHTML Strict, you cannot
+         use "type" in <ul> OR <ol> -->
+    <p>
+      Warning! Taking without paying is considered a crime in most places!
+    </p>
+
+    <ol start="7">
+      <li>Pay for coffee
+
+        <ol type="a"><!-- Start of: Pay for coffee list -->
+          <li>Open Wallet</li>
+          <li>Look for Money</li>
+          <li>Hope you have money</li>
+          <li>Use credit</li>
+          <li>Leave a generous tip</li>
+        </ol> <!--End of: Pay for coffee list -->
+
+      </li>
+      <li>Take coffee</li>
+      <li>Go back to class</li>
+      <li>Enjoy coffee</li>
+    </ol>
+  </body>
+</html>

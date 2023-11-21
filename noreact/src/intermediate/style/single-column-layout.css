@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #666;
+  margin: 0;
+}
+
+#wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+header {
+  background-color: #cff;
+  height: 120px;
+  padding: 1px 15px;
+}
+
+nav {
+  background-color: #f9f;
+  height: 50px;
+  padding: 1px 15px;
+}
+
+main {
+  background-color: #ddf;
+  padding: 1px 15px;
+}
+
+footer {
+  background-color: #333;
+  height: 150px;
+  color: #fff;
+  padding: 1px 15px;
+}
+
+/*# sourceMappingURL=single-column-layout.css.map */

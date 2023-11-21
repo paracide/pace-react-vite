@@ -1,0 +1,92 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <title>CSS and Color</title>
+    <meta charset="utf-8">
+
+    <style>
+      /* Color examples:
+        Full Red: #FF0000 or #f00
+        Full blue: #0000FF or #00f
+        Full Green: #00FF00 or #0f0
+
+        Full CYAN: #00FFFF or #0ff (green and blue combined)
+        Full Magenta: #FF00FF or #f0f (red and blue combined)
+        Full Yellow: #FFFF00 or #ff0 (red and green combined)
+
+        When all the colours are the same level, we get a shade of grey.
+        Dark grey: #333333 or #333
+        Medium Grey: #666666 or #666
+        Light grey: #CCCCCC or #ccc
+
+      */
+      body {
+        color: rgb(255, 204, 204);
+        background-color: rgb(0%, 0%, 20%);
+        font-family: Tahoma;
+      }
+
+      h1 {
+        color: #cfc;
+      }
+
+      h2 {
+        color: rgba(204, 204, 255, .4);
+      }
+
+      #alphatest {
+        color: rgba(255, 255, 0, .2);
+        color: #ffff0077;
+      }
+
+
+    </style>
+
+  </head>
+
+  <body>
+    <h1>Using Colors in CSS</h1>
+    <h2>CSS Allows Colours to be Specified in Multiple Ways</h2>
+    <!--  ol>li*7 -->
+    <ol>
+      <li>
+        <strong>Named Colours</strong>. ie: <code><strong>"darkslategreen</strong></code>.
+        There are many of these colours, but they are not very accurate, and have even known
+        to be inconsistent across different browsers.
+      </li>
+      <li>
+        <strong>RGB Colours</strong>. ie: <code>rgb(255,0,0)</code>. This is a FULL RED color,
+        no green (0), no blue (0).
+      </li>
+      <li><strong>RGB Percentage</strong>. ie: <code>rgb(100%,0%,0%)</code>. ALso red, but
+        using percent instead.
+      </li>
+      <li><strong>Hexadecimal (long hex)</strong>. ie: <code>#ffffff</code>. This is known as
+        "Long Hex", using 6 digits for the color. Old HTML coloring could only use long hex.
+      </li>
+      <li><strong>Short hex</strong>. If we are using hex colours with "pairs" of numbers, like
+        #00FF00, we can combine the paired numbers. This is also known as
+        "shorthand". So #00FF00 can be written as #0F0. Both long and short hex
+        can also be written in lowercase. ie: #0f0. Note: Some colors cannot be
+        expressed as short hex. The color #fc03ca cannot be specified as short hex,
+        becaus
+      </li>
+      <li><strong>RGB with Alpha (RGBA)</strong> <code>rgba(0,0,255,1)</code>. The
+        last number, is ALPHA, or transparency. An ALPHA of 1 is completely
+        opaque. An alpha of 0 is completely transparent. An ALPHA of .5 is going
+        to be 50% transparent.
+      </li>
+      <li></li>
+    </ol>
+
+    <div id="alphatest">
+      This text is being affected with HEX ALPHA. This is some more text to fill up the box.
+      This is me filling out the box. Now do you see why Lorem Ipsum is so useful? Because
+      typing nonsense like this can be very time consuming, not to mention distracting to
+      someone looking at your page.
+    </div>
+
+    <p>This is text</p>
+  </body>
+</html>

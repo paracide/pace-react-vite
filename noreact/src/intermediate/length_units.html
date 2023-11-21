@@ -1,0 +1,191 @@
+<!doctype html>
+
+<html lang="en">
+  <head>  
+    <title>CSS Length Units</title>
+    <meta charset="utf-8">
+    <style>
+      
+      body{
+        font-family: Arial;
+        font-size: 8px;
+      }
+      
+      h1{
+        font-size: 1.7em;
+      }
+      h2{
+        font-size: 1.4em;
+      }
+      h3{
+        font-size: 1.2em;
+      }
+      h4{
+        font-size: 1.1em;
+      }
+      .vwfont{
+        font-size: 2vw;
+      }
+      .vhfont{
+        font-size: 2vh;
+      }
+      .vmaxfont{
+        font-size: 2vmax;
+        color: #f00;
+      }
+      .vminfont{
+        font-size: 2vmin;
+        color: #00f;
+      }
+      
+
+/*
+      span{
+        font-size: 1.5rem;
+      }
+*/
+      
+    /* Every CSS property that deals with size or length needs a UNIT (px, em, in, 
+       etc). however, there is one exception to this: zero values. If something is 
+       going to have a value of zero (0), no unit is required. Therefore, "0", 
+       "0px", "0em", "0in", are all read the exact same way. You can reduce a few 
+       characters in your CSS by omitting the length unit for zero values. ie: 
+       just type "0". */ 
+      
+
+      ul.example li{
+        color: #900;
+        font-size: 1.3em;
+        line-height: 1.6;
+        /* You can use line-height in a list (ol or ul) to change the distance 
+           between list items. In this example, there is inhereted font-size as 
+           relative em's, so by adding/removing the "em" from the line-height, you 
+           can see a slight difference. Even though Chrome DevTools shows the same 
+           computed height. Basically, using the "em" after line-height might cause 
+           the text to use a PARENT's computed line-height. In many cases it will be 
+           the same, but LEAVING OUT the "em" for line-height causes the browser to 
+           use the FONT's size as measurement. */
+      }
+      ul.example li code{
+        background-color: #000;
+        color: #ff0;
+        font-size: 1.1em;
+      }
+      
+      /* Testing ex units */
+      div#extest{
+        font-size: 3em;
+      }
+      div#extest span#extest1{
+        font-size: 1em;
+      }
+      div#extest span#extest2{
+        font-size: 1ex;
+      }
+      
+      p.test{
+        font-size: 3em;
+        line-height: 1.5;
+       /* Default line-height is around 1.15em. NEVER NEVER EVER use absolute 
+          length units like px for line-height, or the space between the lines 
+          will not stay RELATIVE to the text. It will remain constant, so if you 
+          resize the text for any reason, for example larger text, the lines will 
+          OVERLAP, or increase too large for smaller text. In this case, 1.5 is 
+          relative to whatever the current paragraph font size is. */ 
+        
+        /* Note: Sometimes developers will use line-height to "vertically center" 
+           text so that it sits equidistant between the top and bottom of a 
+           container element. This is not the best way to do this. There are more 
+           modern ways of vertically centering text */
+      }
+      /*The "rem" length unit stands for "root element". This usually ABOVE the 
+        body, it is basically the HTML tag. This "jumps over" whatever font-size 
+        you've set for the body (or any other parent elements), and bases it on 
+        the ROOT instead. So if you set an element to 1.5rem, then change the BODY 
+        or any other parent font-size, the REM element is not effected. It will 
+        ALWAYS stay relative to the browser's default font-size (usually 16px, 
+        unless the user has changed this, for example, someone who has a hard 
+        time seeing small font.)
+      */  
+      
+    </style>
+  </head>
+
+  <body>
+    <h1>Some CSS Length Units</h1>
+    <p>
+      CSS uses 2 types of lengths units: <strong>absolute</strong> and <strong>
+      relative</strong>. There are very few times in CSS that you don't need a 
+      length unit. (color are an example) Usually, most values require some sort of
+      length unit (or color).
+    </p>
+    
+    <h2>Absolute Length Units</h2>
+    <!-- ul>li*6(strong{?}+{ - }+code{?}) -->
+    <ul class="example">
+      <li><strong>Inch</strong> - <code>&nbsp;in&nbsp;</code></li>
+      <li><strong>Centimeter</strong> - <code>&nbsp;cm&nbsp;</code></li>
+      <li><strong>Millimeter</strong> - <code>&nbsp;mm&nbsp;</code></li>
+      <li><strong>Points (1/72")</strong> - <code>&nbsp;pt&nbsp;</code></li>
+      <li><strong>Pica (12 points. 6 picas = 1 inch</strong> - <code>&nbsp;pc&nbsp;</code></li>
+      <li><strong>Pixels</strong> - <code>&nbsp;px&nbsp;</code></li>
+    </ul>
+    
+    <h2>Relative Length Units</h2>
+    <!-- ul>li*6(strong{?}+{ - }+code{?}) -->
+
+     <ul class="example">
+      <li><strong>Percent</strong> - <code>&nbsp;%&nbsp;</code></li>
+      <!-- Percent values are calculated using the parent. So 50% of something is 50% 
+         of width/height of the PARENT element. For font sizes, it's the same. So 
+         50% of an element's font size is 50% of the PARENT's font size. 
+         Whenever you are using percentage, for example, ask "200% of WHAT?". 
+         if a parent isn't using a length unit, then the next parent up is used. -->
+      <li><strong>M-height: Height of capital Letter "M"</strong> - <code>&nbsp;em&nbsp;</code></li>
+      <li><strong>x-height: Height of the lowercase letter "x"</strong> - <code>&nbsp;ex&nbsp;</code></li>
+      <!-- Note Browser implementation of "ex" is not always correct. Don't
+           use -->
+      <!-- "ex" SHOULD BE the height of the lowercase "x", but it usually isn't for 
+           most browsers. -->
+      <li><strong>Viewport Width</strong> - <code>&nbsp;vw&nbsp;</code></li>
+      <!-- vw is a percentage of the viewport width. 1vw = 1% of viewport width -->
+      <li><strong>Viewport Height</strong> - <code>&nbsp;vh&nbsp;</code></li>
+      <!-- vh is a percentage of the viewport height. 1vh = 1% of viewport height. -->  
+      <li><strong>Viewport Max</strong> - <code>vmax</code></li>
+      <!-- vmax uses width OR height of the browser viewport, whichever is LONGER -->
+      <li><strong>Viewport Min</strong> - <code>vmin</code></li>
+      <!-- vmin uses the width OR height of the viewport, whichever is SHORTER -->
+      <li><strong>"Root" EM, or REM</strong> - <code>&nbsp;rem&nbsp;</code></li>
+      
+    </ul>
+    
+    <h3>Testing EX heights</h3>
+    <p>
+      The <code>ex</code> length unit is <em>supposed</em> to be the exact 
+      height of the lower-case letter "x". However, some browsers have 
+      historically applied this incorrectly. Some browsers treat it as "half
+      of an em", which is not typographically correct. Applied correctly, the
+      "ex" unit should be different for each font. 
+    </p>
+    <div id="extest">
+      Max <span id="extest1">M</span> <span id="extest2">M</span>
+    
+    </div>
+    
+    <h2>Paragraph of Text</h2>
+    <p class="test">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta molestias labore, cupiditate repellat illum natus quam, dolor expedita, ipsam repudiandae excepturi, blanditiis accusamus. Praesentium officiis, explicabo cum quidem doloremque iure. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, omnis repellat eum, animi dolor, neque odio voluptatibus nihil alias quae culpa! Nobis porro, expedita eveniet accusantium quaerat, deleniti iste beatae?</p>
+
+    <h2>Viewport Width (vw) test</h2>
+    <p>This <span>paragraph</span> is the default size</p>
+    <p class="vwfont">This paragraph is a percentage of the viewport width</p>
+    <p class="vhfont">This paragraph is a percentage of the viewport height</p>
+    <p class="vmaxfont">This paragraph is using viewport width OR viewport height, whichever 
+      is greater</p>  
+    <p class="vminfont">This paragraph is using the viewport width OR viewport height, whichever
+      is shorter</p> 
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos error nemo quasi fugit aut iusto, natus soluta omnis veniam accusamus necessitatibus ullam cupiditate repudiandae, similique. Dolor eum cumque ullam distinctio.</p>
+
+
+  </body>
+</html>

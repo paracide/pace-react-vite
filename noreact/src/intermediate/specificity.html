@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <title>CSS Specificity - Intermediate HTML5/CSS</title>
+    <meta charset="utf-8">
+    
+    <style>
+      
+    /* An easy way to think of CSS SPECIFICITY is to think of it terms of "points".
+       The more "points" a selector has, the more "weight" it's said to have, and 
+       the greater "specificity". Specificity is not just about having complex 
+       descendent/contextual selectors; different types of selectors have 
+       different "weight". 
+      
+      For Example:
+      HTML Selectors (p, em, div, strong, etc) ------------- 1 point.
+      Class Selectors (.test, .highlight, .whatever) ------- 10 points.
+      ID Selectors (#wrapper, #content) -------------------- 100 points.
+      Inline CSS (style="color: #0f0;) --------------------- 1,000 points.
+      !important ------------------------------------------- 10,000 points.  
+*/
+      body{
+        font-family: Tahoma, sans-serif;
+      }
+      
+
+      
+      #wrapper #content p.test span strong.test2{ /* 100 + 100 + 1 + 10 + 1 + 1 + 10 = 223 */
+        color: #00f !important; /* !important overrides anything else, with 10,000. 
+                                   However, note that it only applies per declaration,
+                                   not the entire rule.
+                                   So this declaration is 223 + 10,000 = 10,223 */
+      }
+      /* Note: avoid using !important unless you really need it as a "last resort". It 
+         is VERY difficult to override an !important. You want to use selectors 
+         that you can override at some point, so keep them as simple as you can, 
+         and still work.  */  
+      
+      div#wrapper strong{ /* 1 + 100 + 1 = 102 */
+        color: #f0f;
+      }
+      
+      kbd{
+        color: #0f0;
+      }
+      
+    </style>
+  </head>
+  
+  <body>
+    <div id="wrapper">
+      
+      <header>This is the page header</header>
+      <nav>This is site navigation</nav>
+      <section id="content">
+        <h1>CSS and Specificity (weight)</h1>
+        <p class="test"><span><em><strong class="test2" style="color: #f0f !important;">Lorem ipsum dolor sit amet</strong></em></span>, consectetur adipisicing elit. Quaerat, porro at voluptatem ab itaque pariatur rerum dolorum exercitationem, aut ea, ipsa a ut quos cum nihil dolores impedit. Eligendi, dolor.</p>
+        <!-- You can (but you shouldn't) use !important inside an inline style as well. 
+             the above <strong> tag would have a weight of 1000 + 10,000 = 11,000 points -->
+        <p class="test"><span><em><strong class="test2"><kbd>Beatae tempore</kbd>, nobis velit </strong></em></span>officia sunt voluptatem eveniet, esse quis neque quibusdam optio. Architecto aperiam repudiandae, error amet earum nobis iure animi, explicabo alias, quas molestiae velit non, eos placeat.</p>
+        <p>Repellendus totam dolorem nulla corrupti ut, deleniti voluptatibus ullam asperiores facilis delectus! Dicta fugiat unde sed, deleniti nam id, excepturi non maiores, cum quisquam sunt eveniet atque quis repudiandae culpa.</p>
+        <p>At alias quibusdam, voluptate quidem debitis autem quaerat magni dolore, tempora voluptatem quia doloribus porro, sequi maxime delectus? Repellat tenetur id, eligendi, praesentium porro ex et aperiam quaerat qui est.</p>
+        <p>Nihil, excepturi sequi adipisci quis neque! Impedit officiis, veritatis maxime earum voluptates nam incidunt doloremque officia fugit dignissimos ab fuga quos ipsa obcaecati nobis soluta? Voluptates, alias dolorem! Est, odit?</p>
+        <p>Unde non, aliquam consequatur fugiat saepe beatae delectus sed vel maxime, aliquid, laborum sunt dicta fuga inventore enim minus officiis molestias aut dolorum eligendi quas adipisci nobis repellat tempora! Consequuntur.</p>
+        <p>Ipsam vero placeat quis similique recusandae odio libero tenetur voluptatibus quos culpa unde a sed aspernatur non porro, molestias quisquam adipisci ipsum quaerat suscipit nemo quam esse. Culpa, facere, sit!</p>
+        <p>A tempora mollitia debitis veniam expedita placeat eligendi iure natus, magni nisi dolorem ratione, ipsa quibusdam dolores voluptas quia dolorum nostrum ut unde facilis laborum reprehenderit ipsum. Commodi, perspiciatis quia.</p>
+        <p>Explicabo officia debitis tempore recusandae esse ullam, distinctio obcaecati provident illo ad dolorum sint dicta ducimus soluta atque et nihil quibusdam quasi? Commodi harum animi dolores mollitia, hic perferendis explicabo.</p>
+        <p>Reprehenderit totam inventore facilis cum dignissimos! Dicta nobis alias odit dolorum, voluptates illum omnis, ullam porro beatae ea quibusdam atque facilis eos facere perspiciatis error laudantium impedit, cum saepe voluptatum.</p>
+        <p>Nulla vitae, eligendi reiciendis dolore! Temporibus nobis accusamus perferendis enim asperiores, esse atque sapiente perspiciatis ut id quisquam omnis pariatur officia, odio eum iure ex soluta, voluptatibus recusandae quae saepe?</p>
+        <p>Ipsa nobis architecto magnam illo mollitia veniam porro similique praesentium iure saepe, dolore facere illum provident ducimus reprehenderit sunt ex ipsum voluptates aliquid, amet ea, nihil molestiae. Voluptatum, deleniti, quos!</p>
+      </section>
+      <footer>This is the footer</footer>
+      
+    </div>
+  </body>
+
+</html>

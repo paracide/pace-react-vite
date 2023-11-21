@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+  </head>
+  <body>
+    <h1>Forms</h1>
+
+    <form action="http://scott-media.com/test/form_display.php"
+          enctype="application/x-www-form-urlencoded"
+          id="first_form"
+          method="post"
+    >
+      <p>
+        <!--name for serve, id for html-->
+        <label for="first_name">First name: </label>
+        <input id="first_name" name="first_name" type="text">
+      </p>
+
+      <p>
+        <label>Last name:
+          <input id="last_name" name="last_name" type="text">
+        </label>
+      </p>
+
+      <p>
+        <button type="submit">send you</button>&nbsp;
+        <input type="submit" value="send me">&nbsp;
+        <input type="reset" value="Clear Form">
+      </p>
+
+      <h2>Get in link</h2>
+      <p><a href="http://scott-media.com/test/form_display.php?first_name=12&last_name=123">Here</a></p>
+
+
+    </form>
+  </body>
+</html>

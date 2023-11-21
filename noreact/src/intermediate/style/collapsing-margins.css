@@ -1,0 +1,12 @@
+body {
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
+h2, h3, h4 {
+  margin-bottom: 0;
+}
+h2 + p, h3 + p, h4 + p {
+  margin-top: 0.33em;
+}
+
+/*# sourceMappingURL=collapsing-margins.css.map */

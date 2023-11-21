@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MBS Service</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="wrapper">
+      <header class="shadow">
+        <div id="logo">
+          <img id="img-logo" src="images/main_logo.png" alt="logo">
+          <img id="img-service" src="images/services.png" alt="services">
+        </div>
+
+        <div class="cell-right">
+          <img class="avatar" src="images/xiuxiu.JPG" alt="avatar">
+          <img src="images/icons/alert.svg" alt="alert">
+          <img src="images/icons/logout.svg" alt="logout">
+        </div>
+
+      </header>
+      <nav class="shadow" id="navigation">
+        <ul id="nav-list">
+          <li>
+            <a href="#">
+              <img src="images/icons/menu.svg" alt="menu"/>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/icons/home.svg" alt="home"/>
+              <span>Home</span>
+            </a>
+
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/icons/services.svg" alt="service"/>
+              <span>Service</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/icons/contact.svg" alt="contact"/>
+              <span>Contact</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/icons/share.svg" alt="share"/>
+              <span>Share</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="images/icons/setting.svg" alt="setting"/>
+              <span>Setting</span>
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#" id="dark_mode">
+              <img src="images/icons/dark-mode.svg" alt="dark"/>
+              <span>Dark</span>
+            </a>
+          </li>
+        </ul>
+
+      </nav>
+      <main >
+        <form id="main-form" action="http://scott-media.com/test/form_display.php"
+              autocomplete="on"
+              method="post"
+        >
+          <fieldset>
+            <legend>Personal Information</legend>
+            <div>
+              <label for="first_name">*First Name: </label>
+              <input autocomplete="on"
+                     id="first_name"
+                     maxlength="45"
+                     name="first_name"
+                     placeholder="Type your first name"
+                     required
+                     size="25"
+                     type="text">
+            </div>
+
+            <div>
+              <label for="last_name">last Name: </label>
+              <input id="last_name"
+                     maxlength="45"
+                     name="last_name"
+                     placeholder="Type your last name"
+                     size="25"
+                     type="text">
+            </div>
+
+            <div>
+              <label for="username">Username: </label>
+              <input autocomplete="off"
+                     id="username"
+                     maxlength="16"
+                     name="username"
+                     placeholder="Maximum 16 letters"
+                     size="16"
+                     tabindex="1"
+                     type="text">
+            </div>
+
+            <div>
+              <label for="email_address">Email Address: </label>
+              <input id="email_address" name="email_address" size="25" tabindex="3" type="email"
+                     placeholder="Type Your Email">
+            </div>
+
+            <div>
+              <label for="phone">Phone: </label>
+              <input id="phone" name="phone" size="25" tabindex="2" type="tel" placeholder="Only Support US/CA Phone">
+            </div>
+
+            <div>
+              <label for="student_id">Student ID: </label>
+              <input id="student_id" name="student_id"  type="number" placeholder="7 Digits">
+            </div>
+
+            <div>
+              <label for="birth">Birth Date:</label>
+              <input id="birth" name="birth" type="date">
+            </div>
+
+            <div>
+              <label for="password">Password: </label>
+              <input id="password" maxlength="12" minlength="8" name="password" type="password">
+            </div>
+          </fieldset>
+          <hr>
+          <fieldset id="fieldset-add-info">
+            <legend>Additional Information</legend>
+            <div>
+              <div class="label-div">Please select appropriate age group:
+              </div>
+              <div>
+                <input id="age_0_18" name="age" type="radio" value="baby">
+                <label for="age_0_18">0-18 years</label>
+              </div>
+              <div>
+                <input id="age_19_30" name="age" type="radio" value="youth">
+                <label for="age_19_30">19-30 years</label>
+              </div>
+              <div>
+                <input id="age_31_45" name="age" type="radio" value="adult">
+                <label for="age_31_45">31-45 years</label>
+              </div>
+              <div>
+                <input id="age_45_plus" name="age" type="radio" value="older">
+                <label for="age_45_plus">45&plus; years</label>
+              </div>
+            </div>
+
+
+            <div>
+              <div class="label-div">Which browsers you like:</div>
+              <div>
+                <input id="browser_choice_chrome" name="browser_choice[]" type="checkbox" value="chrome">
+                <label for="browser_choice_chrome">Chrome</label>
+              </div>
+              <div>
+                <input id="browser_choice_edge" name="browser_choice[]" type="checkbox" value="edge">
+                <label for="browser_choice_edge">Edge</label>
+              </div>
+              <div>
+                <input id="browser_choice_safari" name="browser_choice[]" type="checkbox" value="safari">
+                <label for="browser_choice_safari">Safari</label>
+              </div>
+              <div>
+                <input id="browser_choice_other" name="browser_choice[]" type="checkbox" value="others">
+                <label for="browser_choice_other">others</label>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <label for="income">Income:</label>
+              </div>
+              <!--multiple is strong-->
+              <select id="income" name="income">
+                <option value="">Select your income</option>
+                <optgroup label="Poor">
+                  <option value="0_1000">0-1,000</option>
+                  <option value="1000_2000">1,000-2,000</option>
+                </optgroup>
+                <optgroup label="Rich">
+                  <option value="2000_3000">2,000-3,000</option>
+                  <option value="3000_more">3,000+</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div>
+              <div>
+                <label for="industry">Industry:</label>
+              </div>
+              <!--multiple is strong-->
+              <select id="industry" name="Industry">
+                <option value="">Select your Industry</option>
+                <option value="Education">Education</option>
+                <option value="IT">IT</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Finance">Finance</option>
+              </select>
+            </div>
+
+            <div>
+              <div>
+                <label for="comments">Comments:</label>
+              </div>
+              <!--like pre tag-->
+              <textarea id="comments" maxlength="100" placeholder="Enter your comment here"
+                        spellcheck></textarea>
+            </div>
+
+            <!--button group-->
+            <div id="form-button-group">
+              <button class="buttons primary shadow" type="submit">Send</button>
+              <button class="buttons second shadow" type="reset">Reset</button>
+            </div>
+          </fieldset>
+
+
+        </form>
+        <hr>
+        <footer>
+          <div id="footer-grid">
+            <div id="footer-left">
+              <div>
+                MBS Service
+              </div>
+              <div>
+                Your Partner for Excellence.
+              </div>
+              <div>
+                Providing exceptional solutions.
+              </div>
+
+            </div>
+            <div id="footer-center">
+              <div><a href="#">Advertise With Us</a></div>
+              <div><a href="#">Cookies, terms, & privacy</a></div>
+              <div><a href="#">Cookies Settings</a></div>
+
+            </div>
+            <div class="cell-right">
+              <div>
+                <a href="#"><img src="images/icons/social-media/facebook.svg" alt="facebook"></a>
+                <a href="#"> <img src="images/icons/social-media/instagram.svg" alt="instagram"></a>
+                <a href="#"> <img src="images/icons/social-media/twitter.svg" alt="twitter"></a>
+                <a href="#"> <img src="images/icons/social-media/youtube.svg" alt="youtube"></a>
+              </div>
+              <div>Yongdong Xiang</div>
+              <div>
+                arthur@mbs.com
+              </div>
+              <div>+1(431)-644-5252</div>
+              <div>
+                1406 Ellice Ave, Winnipeg, MB R3G 0G4
+              </div>
+            </div>
+          </div>
+
+          <div id="copyright">
+            Copyright &copy; 2023 MBS Service.
+          </div>
+        </footer>
+      </main>
+
+    </div>
+
+
+  </body>
+</html>

@@ -1,0 +1,256 @@
+/*theme*/
+body {
+  /*remove the default margin*/
+  margin: 0;
+  font-family: Oswald, Arial, Helvetica, sans-serif;
+  /*The default 400 Oswald is too bold. So change the default to 300*/
+  font-weight: 300;
+}
+
+/*let every tag be border-box.*/
+* {
+  box-sizing: border-box;
+}
+
+/*
+  theme color setting
+*/
+/*
+  body, nav use gradient theme color
+  external nav selector:
+    make the nav gradient background differ from the body
+*/
+body, nav {
+  background: linear-gradient(to bottom, #BBDEFB, #FFCDD2);
+}
+
+/*header using main theme color*/
+header {
+  background: #BBDEFB;
+}
+
+/*default shadow*/
+.shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/*the cell in the right of grid layout -> right align*/
+.cell-right {
+  text-align: right;
+}
+
+/*Oswald 700 is too bold,change the default to be 600*/
+h1, h2, h3, h4, h5, h6, b, strong, th {
+  font-weight: 600;
+}
+
+/*button style*/
+.buttons {
+  display: inline-block;
+  padding: 12px 24px;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/*primary button color*/
+.primary {
+  background-color: #6699EB;
+}
+
+/*primary button hover color*/
+.primary:hover {
+  background-color: #3D78D8;
+}
+
+/*secondary button color*/
+.second {
+  background-color: #FF7280;
+}
+
+/*secondary button hover color*/
+.second:hover {
+  background-color: #D14B58;
+}
+
+/*The horizontal Rule*/
+hr {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/*position*/
+#wrapper {
+  max-width: 960px;
+  /*set center*/
+  margin: 0 auto;
+  /*fix the header on the top*/
+  /*fix the nav on the left*/
+  /*margin with the fixed header and navigation*/
+}
+#wrapper header {
+  position: fixed;
+  top: 0;
+  height: 100px;
+  /*make the header responsible*/
+  max-width: 960px;
+  /*if using the position fixed, must set the width:100%*/
+  width: 100%;
+}
+#wrapper #navigation {
+  width: 100px;
+  position: fixed;
+  top: 100px;
+  height: 100%;
+}
+#wrapper main {
+  margin-left: 100px;
+  margin-top: 100px;
+  padding: 10px;
+}
+
+/*header layout style*/
+header {
+  display: grid;
+  grid-template-columns: 95% 5%;
+  /*center vertically */
+  /*make all child same height*/
+  /* circle shape avatar*/
+}
+header div {
+  margin: auto 10px;
+}
+header .cell-right img {
+  height: 20px;
+}
+header .avatar {
+  border-radius: 50%;
+}
+
+/*nav layout*/
+#navigation {
+  /*remove the disruption*/
+  /*make the dark model button in the bottom*/
+}
+#navigation ul {
+  padding: 0;
+}
+#navigation li {
+  /*remove the bullet*/
+  list-style-type: none;
+  width: 100%;
+  /*disperse li*/
+  margin: 10px;
+  /*make the icon and text become a button*/
+}
+#navigation li a {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: 80%;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.2s;
+  border-radius: 40px;
+  padding: 6px;
+  /* change the button color when hover*/
+}
+#navigation li a:hover {
+  background-color: #FFCDD2;
+}
+#navigation #dark_mode {
+  position: absolute;
+  bottom: 10%;
+}
+
+/*footer style*/
+#footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /*make the social media icon same size*/
+  /*remove the link style in footer*/
+}
+#footer-grid img {
+  height: 25px;
+}
+#footer-grid #footer-center a {
+  color: #000;
+  display: block;
+  text-decoration: none;
+}
+
+/*make the copyright center*/
+#copyright {
+  margin: 20px;
+  text-align: center;
+}
+
+/*main form style*/
+#main-form {
+  margin: 5%;
+  /*make the button align the input horizontally*/
+  /*bigger legend size*/
+  /*remove the fieldset style*/
+}
+#main-form #form-button-group button {
+  margin-top: 24px;
+  margin-right: 20px;
+}
+#main-form legend {
+  font-size: 35px;
+}
+#main-form fieldset {
+  border: none;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  /*the most input style*/
+  /*change the border color like theme color when input focus*/
+  /*the default input style is not good for radio checkbox*/
+  /*default label above the input*/
+  /*checkbox radio label do not need bold*/
+  /*each input div need more space*/
+  /*textarea style*/
+}
+#main-form fieldset input, #main-form fieldset select {
+  width: 80%;
+  height: 40px;
+  /*del the outline when the input focus*/
+  outline: none;
+  /*del the default border, just show the baseline*/
+  border: none;
+  border-bottom: 2px solid #fff;
+  background-color: transparent;
+}
+#main-form fieldset input:focus {
+  border-bottom: 2px solid #FF7280;
+}
+#main-form fieldset input[type=radio],
+#main-form fieldset input[type=checkbox] {
+  width: auto;
+  height: auto;
+  /*change the radio checkbox background color*/
+  accent-color: #FF7280;
+  margin-top: 10px;
+  /*the radio checkbox label need inline*/
+}
+#main-form fieldset input[type=radio] + label,
+#main-form fieldset input[type=checkbox] + label {
+  display: inline;
+}
+#main-form fieldset label, #main-form fieldset .label-div {
+  display: block;
+  font-weight: 600;
+}
+#main-form fieldset input + label {
+  font-weight: 300;
+}
+#main-form fieldset > div {
+  margin: 10px 0;
+  padding: 10px 0;
+}
+#main-form fieldset textarea {
+  background: transparent;
+  width: 80%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */

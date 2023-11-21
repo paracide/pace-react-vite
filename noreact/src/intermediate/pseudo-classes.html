@@ -1,0 +1,148 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <title>CSS Pseudo-Classes - Intermediate HTML5/CSS</title>
+    <meta charset="utf-8">
+    
+    <style>
+      body{
+        font-family: Tahoma, Arial, Helvetica, sans-serif;
+      }
+      
+      a{
+        color: #900;
+        text-decoration: none;
+      }
+      a:visited{
+        color: #090;
+      }
+      a:active{
+        color: #909;
+      }
+      a:hover{
+        color: #339;
+        background-color: #ddf;
+        text-decoration: underline;
+      }
+    /* The :hover pseudo-class is fired when the user "hovers" the mouse 
+       over the link. Whatever styles you specify here will give a "hover" effect. */
+      
+    /* You can set a :hover on almost anything on a page, but be aware 
+       that there is no actual "hover" on a touchscreen device. It will 
+       "fire" with a tap instead. */ 
+      
+     /* This will select a tag that is the FIRST CHILD of its parent. If 
+        the element is NOT the first child, the rule won't work. In this 
+        example, the rule will not work for the first <p> on the page, 
+        because <p> is NOT the first child of <body>, <h1> is. If we wrap 
+        the <div> around some paragraphs, the rule will then apply, to the <p>
+        after that <div>, because the FIRST CHILD inside the DIV is a P. */ 
+      p:first-child{
+        font-weight: bold;
+      }
+      
+      /* If we were to write 
+      
+      p > a:first-child, 
+      
+        this would only affect an <a> tag
+        that was a FIRST CHILD of a PARAGRAPH. p:first-child means the <p> could be
+        a FIRST CHILD of ANY element. */
+      
+      
+      p:first-of-type{
+        color: #f00;
+      }
+      
+      p:last-child{
+        color: #6f6;
+      }
+      
+
+      
+      p:last-of-type{
+        color: #b66;
+      }
+      /* nth-child() selects a number of a child. In this case, if we try 
+         to select the 3rd child, which MUST be a paragraph (p:nth-child(3)). 
+         Our rule won't apply, because the 3rd child here is actually <ul>.
+         Change it to p:nth-child(2), and it selects the second, which IS
+         a <p>, with a link inside.  */
+      p:nth-child(2){
+        font-style: italic;
+      }
+      
+    /* nth of type pseudo classes will select a SPECIFIC TYPE and NUMBER of 
+      an element, using a number. */
+      ul > li:nth-of-type(4){
+        color: #00c;
+        font-weight: bold;
+        background-color: #ffc;
+      }
+      /* Target the SECOND LAST li, and make it bold. 
+         To get the LAST of a type, use nth-last-of-type(1) */
+      ol > li:nth-last-of-type(2){
+        color: #c0c;
+        font-weight: bold;
+      }
+      /* This is the NOT selector. We can use this to target every 
+         element that is NOT in the brackets. Be careful, because this will 
+         apply to ANY tags that are NOT a <p>, even inside paragraphs.  
+         However, the paragraphs inside the <div> ARE NOT affected by this 
+         rule, but the APPEAR to have the blue background. This is because 
+         the DIV is **NOT** a P. Therefore, it's the DIV that has the background. */         
+      body :not(p){
+        background-color: #ccf;
+      }
+      
+      
+    </style>
+  </head>
+  
+  <body>
+    <h1>Pseudo-class Examples</h1>
+    
+    <p>
+      <a href="http://google.ca">Google Search Engine</a> is awesome. Better than Bing.
+    </p>
+    
+<!--    ul>li{List item $}*8 -->
+    <ul>
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+      <li>List item 4</li>
+      <li>List item 5</li>
+      <li>List item 6</li>
+      <li>List item 7</li>
+      <li>List item 8</li>
+    </ul>
+<!--    ol>li{Ordered list item}*5 -->
+    <ol>
+      <li>Ordered list item</li>
+      <li>Ordered list item</li>
+      <li>Ordered list item</li>
+      <li>Ordered list item</li>
+      <li>Ordered list item</li>
+    </ol>
+    
+<!--    (p*4>lorem)+(div>p*3>lorem)+(p*3>lorem)+div>lorem  -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias velit ipsa tenetur eos molestias nam sit vel similique quo, neque iure, obcaecati placeat amet, dignissimos dolores incidunt excepturi quia nobis!</p>
+    <p>Error eos neque expedita, animi quibusdam aspernatur omnis beatae officia amet vel nihil et saepe facere! Adipisci debitis rerum maxime, aut voluptas consequuntur autem eligendi, voluptates dolore neque illum voluptate.</p>
+    <p>Eaque suscipit aut vero consequuntur quibusdam corrupti enim blanditiis ad nisi aliquam cum tenetur excepturi, natus nam reprehenderit. Cupiditate rem aperiam maxime voluptatum est delectus iste animi, placeat molestiae quo.</p>
+    <p>Cupiditate laudantium tenetur itaque. Reiciendis laboriosam impedit voluptatibus, necessitatibus aliquid ducimus nostrum aperiam a quam obcaecati nisi culpa provident, natus eos, eum atque quasi. Est ipsum quae eius dolor omnis?</p>
+    <div>The following three paragraphs are inside a DIV.
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum nihil, itaque modi corrupti debitis iusto soluta perspiciatis obcaecati eos voluptate explicabo, qui! Nulla soluta numquam voluptatum fugiat dolorem! Minus, blanditiis!</p>
+      <p>Distinctio fugit, quidem atque! Architecto iure culpa, fugiat repellat quasi sunt itaque ab! Fuga odit, obcaecati ut libero neque omnis, doloremque tempore! Quam numquam, voluptatum eligendi assumenda explicabo atque tenetur!</p>
+      <p>Eligendi voluptate praesentium harum ipsum, excepturi provident cumque facere ipsam. Ad praesentium nam, consequatur repudiandae quasi enim voluptatum cupiditate laudantium odit temporibus mollitia, at iusto quis unde sunt. Amet, libero.</p>
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime voluptatum velit, impedit temporibus, atque eaque harum ullam quam eligendi tempora qui? Nostrum velit maiores quod illum odio totam iusto laudantium!</p>
+    <p>Voluptatibus itaque aperiam reiciendis, assumenda deserunt. Delectus dolore culpa fugit natus id deserunt recusandae asperiores modi perferendis, consequatur sapiente est mollitia in maxime quibusdam, nobis nemo labore iure facilis doloribus.</p>
+    <p>Consequuntur necessitatibus laudantium nobis, consequatur voluptates sapiente ratione eveniet ab adipisci voluptas veritatis distinctio, minus, at nemo doloribus autem fugit, saepe atque porro. Quidem veniam nulla saepe, quas voluptate debitis.</p>
+    <div><strong>This is a DIV</strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis dolor consequatur debitis numquam eum iusto reprehenderit ullam fugit dicta. Suscipit at magnam omnis, voluptatibus nemo, recusandae minima nisi adipisci ipsa.</div>
+    
+  </body>
+
+</html>

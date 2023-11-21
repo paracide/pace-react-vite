@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      /* 设置悬停状态下的样式和过渡效果 */
+      .trigger:hover + .target {
+        background-color: #00ff00;
+        color: #ffffff;
+        transition: background-color 1s ease, color 1s ease;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- 触发悬停的元素 -->
+    <div class="trigger">Hover me</div>
+
+    <!-- 受影响的目标元素 -->
+    <div class="target">I change color on hover!</div>
+
+  </body>
+</html>

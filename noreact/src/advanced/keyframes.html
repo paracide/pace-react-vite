@@ -1,0 +1,238 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <title>Keyframe Animation</title>
+    <meta charset="utf-8">
+    
+    <style> 
+      /*********** Keyframes ***********/      
+  
+      @-webkit-keyframes first_animation{
+        from{
+          width: 200px;
+        }
+        to{
+          width: 500px; 
+        }
+      }     
+      
+      @keyframes first_animation{
+        from{
+          width: 200px;
+        }
+        to{
+          width: 500px; 
+        }
+      } 
+      
+        @-webkit-keyframes moving_div{
+        0%{
+          left: 150px;
+          opacity: 0;
+          top: 150px;
+        }
+        10%{
+          left: 150px;
+          opacity: 1; 
+          top: 150px;
+        } 
+        30%{
+          top: 150px;
+          left: 800px;
+        }
+        50%{
+          left: 800px;
+          top: 400px;
+        }
+        70%{
+          top: 400px;
+          left: 150px;
+        }
+        90%{
+          left:150px;
+          top: 150px;
+          opacity: 1;
+        }
+        100%{
+          left: 150px;
+          top: 150px;
+          opacity: 0;
+        }
+      }    
+  
+        @keyframes moving_div{
+        0%{
+          left: 150px;
+          opacity: 0;
+          top: 150px;
+        }
+        10%{
+          left: 150px;
+          opacity: 1; 
+          top: 150px;
+        } 
+        30%{
+          top: 150px;
+          left: 800px;
+        }
+        50%{
+          left: 800px;
+          top: 400px;
+        }
+        70%{
+          top: 400px;
+          left: 150px;
+        }
+        90%{
+          left:150px;
+          top: 150px;
+          opacity: 1;
+        }
+        100%{
+          left: 150px;
+          top: 150px;
+          opacity: 0;
+        }
+      }    
+      
+      @-webkit-keyframes timing_anim{ 
+        0%{
+          left: 0;
+        }
+        100%{
+          left: 700px;
+        }
+      }
+      
+      @keyframes timing_anim{ 
+        0%{
+          left: 0;
+        }
+        100%{
+          left: 700px;
+        }
+      }
+  
+      @-webkit-keyframes bad_anim{
+        0%{
+          background-color: #fcf;
+          width: 150px;
+        }
+        100%{
+          background-color: #ffc;
+          width: 250px;
+        }
+      }    
+      
+      @keyframes bad_anim{
+        0%{
+          background-color: #fcf;
+          width: 150px;
+        }
+        100%{
+          background-color: #ffc;
+          width: 250px;
+        }
+      }
+      
+      /****** Page Styles *******/
+      
+      *{
+        box-sizing: border-box;
+      }
+      
+      body{
+        font-family: Tahoma, Arial, Helvetica, sans-serif;
+      }
+      
+      #keyframe_box{
+        background-color: #ddf;
+        width: 300px;
+        height: 100px;
+        border: 1px solid #000;
+        padding: 9px;
+         
+        -webkit-animation: first_animation  3.5s ease 1s both;
+        animation: first_animation  3.5s ease 1s both;
+        
+      }
+      
+      #keyframe_infinite{
+        background: radial-gradient(#fcc, #966);
+        width: 150px;
+        min-height: 150px;
+        border: 1px solid #000;
+        border-radius: 50%;
+        padding: 15px 20px 15px 20px;
+        text-align: center;
+        font-size: .9em;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.7);
+        
+        position: absolute;
+        
+/*        animation: moving_div 3s ease-in-out both infinite;*/
+      }
+      
+      #timing_functions{
+        background-color: #797;
+        width: 174px;
+        min-height: 100px;
+        border: 1px solid #000;
+        padding: 9px;
+        position: relative;
+        left: 0;
+        top: 150px;
+        
+        -webkit-animation: timing_anim 2s cubic-bezier(1,-0.01,.14,1.43) both alternate infinite;
+        animation: timing_anim 2s cubic-bezier(1,-0.01,.14,1.43) both alternate infinite;
+      }
+      
+      #bad_animation{
+        background-color: #fcf;
+        width: 175px;
+        min-height: 100px;
+        border: 1px solid #000;
+        padding: 9px;
+        
+        position: absolute;
+        top: 470px;
+        
+      }
+      /* This is a bad idea. Tha animation will 
+         NOT animate out. It will "snap" back to the 
+         original position when the mouse is moved 
+         away. Don't use transition or animation 
+         on :hover */
+      #bad_animation:hover{
+        -webkit-animation: bad_anim 1s ease both alternate infinite;
+        animation: bad_anim 1s ease both alternate infinite;
+      }
+      
+    </style>
+  </head>
+  
+  <body>
+    <h1>Keyframe Animation</h1>
+    
+    <div id="keyframe_box">This box is going to move on it's own</div>
+    <div id="keyframe_infinite">This animation will go on forever</div>
+    <div id="timing_functions">Testing Timing Functions</div>
+    <div id="bad_animation">Do NOT use @keyframes on :hover. The animation will 
+      "Snap" back to original state when not hovered.</div>
+    
+    <!-- p*10>lorem -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis exercitationem sapiente obcaecati suscipit nemo pariatur possimus enim quibusdam illo corporis voluptatem facere aliquid delectus, similique voluptates magni, officia laboriosam. Soluta.</p>
+    <p>Et accusamus reiciendis odit sapiente similique repellat quo aliquid voluptatum quod id officiis delectus dolores, nesciunt esse. Cumque nam excepturi cum inventore rerum dolore placeat maiores dolor? Ipsum maiores, nisi.</p>
+    <p>Maxime ex nam, aliquam perspiciatis minima laborum iusto placeat reiciendis veritatis dicta ullam ratione quidem illo, quas incidunt enim, tempore fugiat ab est eum ad facere. Praesentium fuga id, dignissimos.</p>
+    <p>Cumque ab non placeat officiis mollitia qui atque ex nisi voluptas iusto, quidem natus libero accusantium dolorem totam ducimus odit tempore inventore soluta quaerat eaque a, ad velit ipsa. Repellendus?</p>
+    <p>Repellendus neque impedit, nesciunt quisquam hic magnam, explicabo assumenda fugit! Mollitia voluptate excepturi, fuga reprehenderit. Debitis, nihil porro perspiciatis numquam modi optio eius vel a tenetur facere possimus suscipit, fugit.</p>
+    <p>Sit velit, perferendis totam, nobis voluptatem voluptate. Asperiores accusamus laboriosam eaque, quia amet, consequuntur vel qui a nihil eos dolorem quis beatae reiciendis dignissimos tempore minus, totam enim distinctio hic.</p>
+    <p>Vel nihil atque voluptates deserunt. Ullam vel aliquid quasi dolorem aperiam voluptates nostrum, minima mollitia velit quas laboriosam, porro perspiciatis excepturi recusandae quae ut, doloremque sit assumenda nobis! Vel, labore!</p>
+    <p>Dicta voluptas sint omnis, nostrum et quasi amet consequuntur fuga ab, ex eveniet, velit praesentium reiciendis magnam obcaecati eos ipsa nam harum? Autem provident, quo excepturi et possimus quam! Beatae!</p>
+    <p>Sapiente optio rerum voluptates repellat repudiandae suscipit dolorem, accusantium corporis sunt architecto deserunt dignissimos unde iusto placeat quasi facere dolores cupiditate ab cum autem blanditiis. Odit modi nostrum, nulla minus.</p>
+    <p>In molestias tenetur quibusdam excepturi harum itaque impedit labore cumque consequuntur, magnam et minus officia, optio blanditiis sunt velit, dignissimos ducimus. Repellendus voluptas, obcaecati. Maiores veniam reiciendis eligendi rem corrupti.</p>
+  </body>
+
+</html>

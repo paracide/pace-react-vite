@@ -1,0 +1,75 @@
+<!doctype html>
+
+<html lang="en">
+
+  <head>
+    <title>SVG Images - Adv HTML5/CSS3</title>
+    <meta charset="utf-8">
+    
+    <style>
+      
+      body{
+        font-family: Tahoma, Arial, Helvetica, sans-serif;
+      }
+      
+      #inline_svg svg{
+        width: 250px;
+        height: auto;
+      }
+      #inline_svg svg #Checkmark_1:hover{
+        fill: #3f3;
+      }
+      
+      
+      #svg_bg{
+        background-image: url(images/checkbox.svg);
+        background-size: 250px 214px;
+        width: 400px;
+        height: 400px;
+        background-repeat: no-repeat;
+      }
+
+    </style>
+  </head>
+  
+  <body>
+    <h1>SVG Images</h1>
+    <p>There are 3 ways to insert an SVG image on your page.</p>
+    
+    <h2>Method 1: Using an IMG Tag</h2>
+    <p>
+      <img src="images/checkbox.svg" 
+           alt="Checkbox"
+           width="250"
+           height="214">
+    </p>
+    
+    <h2>Method 2: Using INLINE SVG</h2>
+    <p id="inline_svg">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="751" height="643" viewBox="0 0 751 643">
+        <defs>
+          <style>
+            .cls-1 {
+              fill: #0f0000;
+              fill-rule: evenodd;
+              filter: url(#filter);
+            }
+          </style>
+          <filter id="filter" x="26" y="33" width="696" height="591" filterUnits="userSpaceOnUse">
+            <feFlood result="flood" flood-color="#4d49e7" flood-opacity="0.49"/>
+            <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+            <feBlend result="blend" in2="SourceGraphic"/>
+          </filter>
+        </defs>
+        <path id="Checkmark_1" data-name="Checkmark 1" class="cls-1" d="M220.644,305.374l94.373,159.313S468.373,140.922,710.2,33c-5.9,77.087-29.491,143.9,11.8,226.122C615.831,279.678,397.593,510.939,326.814,624,226.542,516.078,108.576,433.852,26,408.157Z"/>
+      </svg>
+    
+    </p>
+    
+    <h2>Method 3: SVG as CSS Background</h2>
+    <div id="svg_bg">
+      This should have an SVG background.
+    </div>
+  </body>
+
+</html>
