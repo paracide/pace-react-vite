@@ -16,6 +16,15 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/*header and footer animation,just show in last 1s*/
+@keyframes open {
+  0%, 80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
 /*the top card animation*/
 @keyframes go-top {
   25% {
@@ -25,10 +34,24 @@ body {
     transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(100px);
   }
   75% {
-    transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(100px) translateX(-100px);
+    transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(100px) translateX(-200px);
   }
   100% {
-    transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(-300px);
+    transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(-400px);
+  }
+}
+@keyframes go-top-m {
+  25% {
+    transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+  }
+  50% {
+    transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(50px);
+  }
+  75% {
+    transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(50px) translateX(-100px);
+  }
+  100% {
+    transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(-200px);
   }
 }
 /*the bottom card animation*/
@@ -40,10 +63,25 @@ body {
     transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-100px);
   }
   75% {
-    transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-100px) translateX(100px);
+    transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-100px) translateX(200px);
   }
   100% {
-    transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(300px);
+    transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(400px);
+  }
+}
+/*the bottom card animation*/
+@keyframes go-bottom-m {
+  25% {
+    transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+  }
+  50% {
+    transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-50px);
+  }
+  75% {
+    transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-50px) translateX(100px);
+  }
+  100% {
+    transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(200px);
   }
 }
 /*the center card animation*/
@@ -67,13 +105,19 @@ header {
   height: 10vh;
   /*header display, logo 50% and nav bar 50%*/
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 10fr 10fr;
+  padding: 10px 10px;
+  color: #ff5500;
+  animation: open 1s 4.5s ease-in-out;
+  background: linear-gradient(to left, #87CEEB, #ADD8E6, #B0E0E6);
+}
+header #desc {
+  margin: auto 0;
 }
 header #logo {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
-  margin: 10px;
 }
 
 /*nav bar style, nav bar is inside the header*/
@@ -90,8 +134,10 @@ nav a {
   color: #fff;
 }
 nav a:hover {
-  color: orange;
+  color: #ff5500;
+  transition: all 0.3s ease-in-out;
   text-decoration: underline;
+  font-size: 1.05em;
 }
 
 /*the main style*/
@@ -105,6 +151,7 @@ main {
   /*bottom card animation*/
   /*center card animation*/
   /*top card animation*/
+  /*top card animation*/
 }
 main img, main video {
   height: 100%;
@@ -113,30 +160,38 @@ main img, main video {
 }
 main .card {
   position: absolute;
-  left: 40%;
-  top: 10%;
-  width: 220px;
-  height: 70vh;
+  top: 15%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 190px;
+  height: 60vh;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 main .card-header {
-  background: linear-gradient(to top, #0598f2, #2bb3f2);
-  color: #fff;
+  background: linear-gradient(to left, #87CEEB, #ADD8E6, #B0E0E6);
+  color: #ff5500;
   padding: 10px;
   text-align: center;
   height: 7vh;
 }
 main #xiuxiu1 {
-  animation: go-bottom 4s 2s ease forwards;
+  animation: go-bottom 4s 1s ease forwards;
 }
 main #xiuxiu2 {
-  animation: go-center 4s 2s ease forwards;
+  animation: go-center 4s 1s ease forwards;
 }
 main #xiuxiu3 {
-  animation: go-top 4s 2s ease forwards;
+  animation: go-top 4s 1s ease forwards;
+}
+main #xiuxiu5 {
+  animation: go-top-m 4s 1s ease forwards;
+}
+main #xiuxiu4 {
+  animation: go-bottom-m 4s 1s ease forwards;
 }
 
 /*footer style*/
@@ -145,7 +200,13 @@ footer {
   height: 5vh;
   padding: 5px;
   text-align: center;
-  color: #fff;
+  color: #ff5500;
+  background: linear-gradient(to left, #87CEEB, #ADD8E6, #B0E0E6);
+}
+
+/*footer header nav animation*/
+footer, header, nav {
+  animation: open 5s ease-in-out;
 }
 
 /*# sourceMappingURL=style.css.map */

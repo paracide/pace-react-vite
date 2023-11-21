@@ -2,14 +2,371 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment2</title>
+    <style>
+      /*all tage are border-box*/
+      * {
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Tahoma, Arial, Helvetica, sans-serif;
+        margin: 0;
+        /*make children 3d*/
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        background: linear-gradient(to bottom, #87CEEB, #ADD8E6, #B0E0E6);
+      }
+
+      /*default shadow*/
+      .shadow {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      /*header and footer animation,just show in last 1s*/
+      @-webkit-keyframes open {
+        0%, 80% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 100%;
+        }
+      }
+
+      @keyframes open {
+        0%, 80% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 100%;
+        }
+      }
+
+      /*the top card animation*/
+      @-webkit-keyframes go-top {
+        25% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+        }
+        50% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(100px);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(100px);
+        }
+        75% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(100px) translateX(-200px);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(100px) translateX(-200px);
+        }
+        100% {
+          -webkit-transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(-400px);
+          transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(-400px);
+        }
+      }
+
+      @keyframes go-top {
+        25% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+        }
+        50% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(100px);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(100px);
+        }
+        75% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(100px) translateX(-200px);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(100px) translateX(-200px);
+        }
+        100% {
+          -webkit-transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(-400px);
+          transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(-400px);
+        }
+      }
+
+      @-webkit-keyframes go-top-m {
+        25% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+        }
+        50% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(50px);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(50px);
+        }
+        75% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(50px) translateX(-100px);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(50px) translateX(-100px);
+        }
+        100% {
+          -webkit-transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(-200px);
+          transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(-200px);
+        }
+      }
+
+      @keyframes go-top-m {
+        25% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+        }
+        50% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(50px);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(50px);
+        }
+        75% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(50px) translateX(-100px);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(50px) translateX(-100px);
+        }
+        100% {
+          -webkit-transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(-200px);
+          transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(-200px);
+        }
+      }
+
+      /*the bottom card animation*/
+      @-webkit-keyframes go-bottom {
+        25% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+        }
+        50% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-100px);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-100px);
+        }
+        75% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-100px) translateX(200px);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-100px) translateX(200px);
+        }
+        100% {
+          -webkit-transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(400px);
+          transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(400px);
+        }
+      }
+
+      @keyframes go-bottom {
+        25% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+        }
+        50% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-100px);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-100px);
+        }
+        75% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-100px) translateX(200px);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-100px) translateX(200px);
+        }
+        100% {
+          -webkit-transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(400px);
+          transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(400px);
+        }
+      }
+
+      /*the bottom card animation*/
+      @-webkit-keyframes go-bottom-m {
+        25% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+        }
+        50% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-50px);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-50px);
+        }
+        75% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-50px) translateX(100px);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-50px) translateX(100px);
+        }
+        100% {
+          -webkit-transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(200px);
+          transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(200px);
+        }
+      }
+
+      @keyframes go-bottom-m {
+        25% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+        }
+        50% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-50px);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-50px);
+        }
+        75% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-50px) translateX(100px);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg) translateZ(-50px) translateX(100px);
+        }
+        100% {
+          -webkit-transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(200px);
+          transform: rotateX(0) rotateZ(0) rotateY(0) translateZ(0) translateX(200px);
+        }
+      }
+
+      /*the center card animation*/
+      @-webkit-keyframes go-center {
+        25%, 75% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+        }
+        100% {
+          -webkit-transform: rotateX(0) rotateZ(0) rotateY(0);
+          transform: rotateX(0) rotateZ(0) rotateY(0);
+        }
+      }
+
+      @keyframes go-center {
+        25%, 75% {
+          -webkit-transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+          transform: rotateX(30deg) rotateZ(30deg) rotateY(-40deg);
+        }
+        100% {
+          -webkit-transform: rotateX(0) rotateZ(0) rotateY(0);
+          transform: rotateX(0) rotateZ(0) rotateY(0);
+        }
+      }
+
+      /*make the wrapper full screen*/
+      #wrapper {
+        max-width: 100vw;
+        height: 100vh;
+      }
+
+      /*header style*/
+      header {
+        width: 100%;
+        height: 10vh;
+        /*header display, logo 50% and nav bar 50%*/
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 10fr 10fr;
+        grid-template-columns: 1fr 10fr 10fr;
+        padding: 10px 10px;
+        color: #ff5500;
+        -webkit-animation: open 1s 4.5s ease-in-out;
+        animation: open 1s 4.5s ease-in-out;
+        background: linear-gradient(to left, #87CEEB, #ADD8E6, #B0E0E6);
+      }
+
+      header #desc {
+        margin: auto 0;
+      }
+
+      header #logo {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+      }
+
+      /*nav bar style, nav bar is inside the header*/
+      nav {
+        /*the display using grid*/
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(5, 1fr);
+        place-items: center;
+        text-align: center;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      nav a:hover {
+        color: #ff5500;
+        transition: all 0.3s ease-in-out;
+        text-decoration: underline;
+        font-size: 1.05em;
+      }
+
+      /*the main style*/
+      main {
+        height: 85vh;
+        -webkit-perspective: 600px;
+        perspective: 600px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      /*all card media are full the div*/
+
+      main img, main video {
+        height: 100%;
+        width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+      }
+
+      main .card {
+        position: absolute;
+        top: 15%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 190px;
+        height: 60vh;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      main .card-header {
+        background: linear-gradient(to left, #87CEEB, #ADD8E6, #B0E0E6);
+        color: #ff5500;
+        padding: 10px;
+        text-align: center;
+        height: 7vh;
+      }
+
+      /*animations*/
+      main #xiuxiu1 {
+        -webkit-animation: go-bottom 4s 1s ease forwards;
+        animation: go-bottom 4s 1s ease forwards;
+      }
+
+      main #xiuxiu2 {
+        -webkit-animation: go-center 4s 1s ease forwards;
+        animation: go-center 4s 1s ease forwards;
+      }
+
+      main #xiuxiu3 {
+        -webkit-animation: go-top 4s 1s ease forwards;
+        animation: go-top 4s 1s ease forwards;
+      }
+
+      main #xiuxiu5 {
+        -webkit-animation: go-top-m 4s 1s ease forwards;
+        animation: go-top-m 4s 1s ease forwards;
+      }
+
+      main #xiuxiu4 {
+        -webkit-animation: go-bottom-m 4s 1s ease forwards;
+        animation: go-bottom-m 4s 1s ease forwards;
+      }
+
+      /*footer style*/
+      footer {
+        width: 100vw;
+        height: 5vh;
+        padding: 5px;
+        text-align: center;
+        color: #ff5500;
+        background: linear-gradient(to left, #87CEEB, #ADD8E6, #B0E0E6);
+      }
+
+      /*footer header nav animation*/
+      footer, header, nav {
+        -webkit-animation: open 5s ease-in-out;
+        animation: open 5s ease-in-out;
+      }
+    </style>
+
   </head>
   <body>
     <div id="wrapper">
+      <!--header-->
       <header class="shadow">
         <img id="logo" src="media/logo.png" alt="logo">
+        <span id="desc">Xiuxiu Stay With You</span>
+        <!--horizontal nav-->
         <nav>
           <div><a href="#">Home</a></div>
           <div><a href="#">Gallery</a></div>
@@ -19,14 +376,23 @@
         </nav>
       </header>
 
+      <!--cards-->
       <main>
+        <!--right-->
         <div class="card" id="xiuxiu1">
           <div class="card-header">Monster</div>
           <div class="card-content">
             <img src="media/xiuxiu2.JPG" alt="xiuxiu2">
           </div>
         </div>
-
+        <!--right center-->
+        <div class="card" id="xiuxiu4">
+          <div class="card-header">Graceful</div>
+          <div class="card-content">
+            <img src="media/xiuxiu4.jpg" alt="xiuxiu4">
+          </div>
+        </div>
+        <!--center-->
         <div class="card" id="xiuxiu2">
           <div class="card-header">Funny</div>
           <div class="card-content">
@@ -36,17 +402,25 @@
             </video>
           </div>
         </div>
-
+        <!--left center-->
+        <div class="card" id="xiuxiu5">
+          <div class="card-header">Silly</div>
+          <div class="card-content">
+            <img src="media/xiuxiu5.jpg" alt="xiuxiu5">
+          </div>
+        </div>
+        <!--left-->
         <div class="card" id="xiuxiu3">
           <div class="card-header">Cute</div>
           <div class="card-content">
-            <img src="media/xiuxiu1.jpg" alt="xiuxiu1">
+            <img src="media/xiuxiu1.jpg" alt="xiuxiu3">
           </div>
         </div>
 
 
       </main>
 
+      <!--footer-->
       <footer class="shadow">
         <div id="copyright">
           Copyright &copy; 2023 Xiuxiu Limit

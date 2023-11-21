@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {AppBar, Button, Container, CssBaseline, Grid, Toolbar, Typography} from "@mui/material"
+import {PhotoCamera} from "@mui/icons-material";
 
 function App() {
-  const [count, setCount] = useState(0)
+    return (
+        <>
+            <CssBaseline>
+                <AppBar position="relative">
+                    <Toolbar>
+                        <PhotoCamera/>
+                        <Typography variant='h6'>WDD React Vite Typescript</Typography>
+                    </Toolbar>
+                </AppBar>
+                <main>
+                    <div>
+                        <Container maxWidth='sm'>
+                            <Typography variant='h2' align='center' color="textPrimary" gutterBottom >
+                                WDD Album
+                            </Typography>
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+                            <Typography variant="h5" align="center" color="textSecondary" paragraph>
+                                Hello Everyone This is a gallery about WDD code using React+Vite+Mui+Typescript
+                            </Typography>
+                            <Grid container spacing="2" justifyContent="center">
+                                <Grid item>
+                                    <Button variant="contained" color="primary">
+                                        See my photos
+                                    </Button>
+                                </Grid>
+                                <Grid item>
+                                    <Button variant="contained" color="secondary">
+                                        Secondary Button
+                                    </Button>
+                                </Grid>
+                            </Grid>
+
+                        </Container>
+                    </div>
+                </main>
+            </CssBaseline>
+        </>
+    )
 }
 
 export default App
