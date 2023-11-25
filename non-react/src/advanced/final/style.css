@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /*remove the default margin*/
+    margin: 0;
+    font-family: Oswald, Arial, Helvetica, sans-serif;
+    /*The default 400 Oswald is too bold. So change the default to 300*/
+    font-weight: 300;
+    background: #fcc;
+    /*for mobile*/
+    /*only for ipad mini  768*1024*/
+}
+
+@media screen and (max-width: 767px) {
+    body {
+        background: #cfc;
+    }
+}
+
+@media screen and (width: 768px) and (height: 1024px) {
+    body {
+        background: #ccf;
+    }
+}
+
+#wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    height: 20%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 5fr 1fr 1fr;
+    place-items: center;
+}
+
+header div {
+    display: inline-block;
+}
+
+header #logo picture, header img {
+    height: 100px;
+    width: auto;
+}
+
+/*# sourceMappingURL=style.css.map */
