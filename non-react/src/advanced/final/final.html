@@ -4,28 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <title>Xiuxiu</title>
   </head>
   <body>
     <div id="wrapper">
-      <header>
-        <div>Home</div>
-        <div>Gallery</div>
+      <header class="shadow">
+        <a href="#" class="menu">Home</a>
+        <a href="#" class="menu">Gallery</a>
         <div id="logo">
           <picture>
-            <source srcset="media/logo_2x.png" media="(min-width: 768px)">
+            <source srcset="media/logo_4x.png" media="(min-width: 768px)">
             <source srcset="media/logo.png 1x, media/logo_2x.png 2x" media="(max-width: 767px)">
-            <img src="media/logo_2x.png" alt="logo">
+            <img src="media/logo_4x.png" alt="logo">
           </picture>
         </div>
-        <div>Video</div>
-        <div>About</div>
+        <a href="#" class="menu">Video</a>
+        <a href="#" class="menu">About</a>
       </header>
-      <main></main>
-      <footer></footer>
+      <main>
+        <div id="main-content">
+          <div class="theme-border" id="topic">
+            100,000+ Lovers Subscribed!
+          </div>
+          <div id="ad">
+            Discover the irresistible charm of <span>Xiuxiu</span> with a community!
+          </div>
+          <div id="main-img">
+            <img src="media/main.jpg" alt="bg">
+          </div>
+          <div>
+            <button class="buttons  theme-border">Subscribe</button>
+            <button class="buttons  theme-border">Donate</button>
+          </div>
+        </div>
+
+        <div class="shadow" id="about">
+          <div id="about-title">
+            About Xiuxiu Inc.
+          </div>
+          <div class="about-content">
+            Xiuxiu Inc. is not just a company.
+          </div>
+          <div class="about-content">
+            It's a celebration of the enchanting world of our charismatic cat,
+            Xiuxiu.
+          </div>
+          <div class="about-content">
+            As the heart and soul of our brand, Xiuxiu brings joy, warmth, and a touch of whimsy to everything
+            we do.
+          </div>
+
+        </div>
+
+        <div id="gallery-title">
+          Gallery
+        </div>
+        <div id="gallery">
+          <div class="card">
+            <img src="media/g1.JPG" alt="xiuxiu">
+          </div>
+          <div class="card">
+            <img src="media/g3.JPG" alt="xiuxiu">
+          </div>
+          <div class="card">
+            <img src="media/g2.JPG" alt="xiuxiu">
+          </div>
+        </div>
+
+      </main>
+      <footer>
+        <div>Copyright &copy;2023 - Xiuxiu Inc.</div>
+        <img src="media/footer.jpg" alt="footer">
+      </footer>
     </div>
-
-
   </body>
 </html>

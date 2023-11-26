@@ -1,49 +1,203 @@
+/*all border-box*/
 * {
     box-sizing: border-box;
+}
+
+/*theme color border*/
+.theme-border {
+    border: 1px solid #ac4420;
+}
+
+/*default shadow*/
+.shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/*button style*/
+.buttons {
+    width: 10em;
+    padding: 12px 24px;
+    color: #ac4420;
+    border-radius: 50px;
+    background: transparent;
+    margin: 0 1em;
 }
 
 body {
     /*remove the default margin*/
     margin: 0;
     font-family: Oswald, Arial, Helvetica, sans-serif;
-    /*The default 400 Oswald is too bold. So change the default to 300*/
-    font-weight: 300;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     background: #fcc;
     /*for mobile*/
     /*only for ipad mini  768*1024*/
 }
-
 @media screen and (max-width: 767px) {
     body {
         background: #cfc;
     }
 }
-
 @media screen and (width: 768px) and (height: 1024px) {
     body {
         background: #ccf;
     }
 }
 
+/*i dont know why it must 960px, i like full screen*/
 #wrapper {
     max-width: 960px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2em;
 }
 
+/*fixed on the top*/
 header {
-    height: 20%;
+    /*
+    sticky is better than fixed
+    if using fixed
+      1.it will cover other elements
+      2.it will overflow, need to set
+         max-width: 960px;
+         width: 100%;
+
+    */
+    position: sticky;
+    top: 0;
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 5fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    place-items: center;
+    background: #fff8dc;
+}
+header #logo picture, header img {
+    border-radius: 50%;
+    /*for mobile*/
+}
+
+header #detail {
+    font-size: 1.5em;
+}
+
+header .menu {
+    text-decoration: none;
+    color: #000;
+}
+
+header .menu:hover {
+    text-decoration: underline;
+    color: #ac4420;
+}
+
+main {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1em;
     place-items: center;
 }
 
-header div {
-    display: inline-block;
+#main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    place-items: center;
 }
 
-header #logo picture, header img {
-    height: 100px;
-    width: auto;
+@media screen and (max-width: 767px) {
+    #main-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+#main-content #topic {
+    margin: 0 auto;
+    font-size: 1em;
+    padding: 12px 24px;
+    border-radius: 50px;
+    background: linear-gradient(to right, #fff8dc, #ac4420);
+}
+
+#main-content #ad {
+    font-size: 3em;
+}
+
+#main-content #ad span {
+    color: #ac4420;
+}
+
+#main-content #main-img {
+    grid-area: 1/2/4/2;
+}
+
+@media screen and (max-width: 767px) {
+    #main-content #main-img {
+        grid-area: auto;
+    }
+}
+
+#main-content #main-img img {
+    border-radius: 5px;
+    width: 90%;
+}
+
+#about {
+    padding: 5em 1em;
+    border-radius: 5px;
+    width: 100%;
+    color: #fff;
+    background-image: url("media/bg.jpg");
+    background-size: cover;
+}
+
+#about #about-title {
+    font-size: 3em;
+}
+
+#gallery-title {
+    font-size: 5em;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    place-items: center;
+}
+
+@media screen and (max-width: 767px) {
+    #gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+#gallery .card {
+    width: 70%;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+#gallery .card:hover {
+    transform: scale(1.05);
+}
+
+#gallery img {
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+}
+
+footer {
+    background: #fff8dc;
+    width: 100%;
+    text-align: center;
+}
+
+footer img {
+    bottom: 0.5em;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

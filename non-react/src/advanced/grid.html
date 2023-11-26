@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      body {
+        display: grid;
+        grid-gap: 1em;
+        grid-auto-rows: 50px;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      #div2 {
+        grid-row: 1 / span 3;
+      }
+
+      div {
+        background: deepskyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>1</div>
+    <div id="div2">2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+  </body>
+</html>
