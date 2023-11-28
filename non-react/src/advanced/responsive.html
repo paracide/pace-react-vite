@@ -22,16 +22,16 @@
          -->
     <meta name="viewport" content="width=device-width">
 
-    <!-- This is a "media type" for "print". It means if the page is printed,
+    <!-- This is a "images type" for "print". It means if the page is printed,
          the browser will look for this CSS external file, and apply it to the printed
          page.
-         Some of the earlier media types were:
+         Some of the earlier images types were:
          - projector - used for page view on a projector
          - print - Still used. Applied when printed.
          - all (default) - this is applying to every device.
          - screen - only screens (not printed) will apply.
          -->
-    <!--  <link rel="stylesheet" href="myprint.css" media="print">-->
+    <!--  <link rel="stylesheet" href="myprint.css" images="print">-->
 
 
     <style>
@@ -97,13 +97,13 @@
 
       /* Media Queries */
 
-      /* Note: With @media all (or <link media="all") BOTH screens and printed pages
-         will be affected. @media screen will ONLY target non-printed screens. (ie,
-         every display device). It's better to use @media all and then provide a
+      /* Note: With @images all (or <link images="all") BOTH screens and printed pages
+         will be affected. @images screen will ONLY target non-printed screens. (ie,
+         every display device). It's better to use @images all and then provide a
          "print stylesheet" to override and change whatever you need to for print.
          More on this later .*/
 
-      /* This media query in effect BETWEEN 600 and 960px. */
+      /* This images query in effect BETWEEN 600 and 960px. */
       @media screen and (max-width: 960px) and (min-width: 600px) {
         #wrapper {
         }
@@ -125,12 +125,12 @@
       }
 
 
-      /* Note: There was a previous media query called device-width or
+      /* Note: There was a previous images query called device-width or
          max-device-width or min-device-width. These are all deprecated, and will
          cause your page to not validate. It is not recommended to use them anymore,
-         although some media query tutorials may still mention them. DO NOT USE. */
+         although some images query tutorials may still mention them. DO NOT USE. */
       /*
-          @media all and (device-width: 1537px){
+          @images all and (device-width: 1537px){
             #wrapper{
               background-color: #0f0;
             }
@@ -177,13 +177,13 @@
       /* Older way to detect an Ipad. Easy, because ALL ipads a few years back had the
          exact same CSS pixels. However, lately iPads have different resolutions */
       /*
-      @media screen and (width: 768px) and (orientation: portrait){
+      @images screen and (width: 768px) and (orientation: portrait){
         #box2 p.boxtext::after{
           content: "This is an IPAD in PORTRAIT mode.";
         }
       }
 
-      @media screen and (width: 1024px) and (orientation: landscape){
+      @images screen and (width: 1024px) and (orientation: landscape){
         #box2 p.boxtext::after{
           content: "This is an IPAD in LANDSCAPE mode.";
 
@@ -196,9 +196,9 @@
       /* Target the EXACT dimensions of an Ipad. We know that the iPad has a "css"
          resolution of 768px by 1024px. We can detect this exactly, and provide
          styles specifically for the iPad. */
-      /* If we want to use an OR in a media query instead of AND, we use a comma
-         between media queries. Comma means OR.
-         ex: @media screen and (width: 768px), (with: 1024px)  */
+      /* If we want to use an OR in a images query instead of AND, we use a comma
+         between images queries. Comma means OR.
+         ex: @images screen and (width: 768px), (with: 1024px)  */
       @media screen and (width: 1024px), (width: 768px), (width: 820px), (width: 1080px) {
         #box2 p.boxtext::after {
           content: "This looks like an iPad! Old or new, but not PRO.";
@@ -245,7 +245,7 @@
         <div id="logo2">
           <picture>
             <source media="(min-width:768px)" srcset="images/logo_100.png 1x, images/logo_200.png 2x">
-            <!--<source media="(max-width:767px)" srcset="images/logo_50.png 1x, images/logo_100.png 2x">-->
+            <!--<source images="(max-width:767px)" srcset="images/logo_50.png 1x, images/logo_100.png 2x">-->
             <img src="images/logo_50.png" width="100" height="100" alt="">
           </picture>
         </div>

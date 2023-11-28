@@ -166,7 +166,7 @@ header .avatar {
 #footer-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /*make the social media icon same size*/
+    /*make the social images icon same size*/
   /*remove the link style in footer*/
 }
 #footer-grid img {

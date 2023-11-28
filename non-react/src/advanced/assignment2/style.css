@@ -145,7 +145,7 @@ main {
   height: 85vh;
   perspective: 600px;
   transition: all 0.3s ease-in-out;
-  /*all card media are full the div*/
+    /*all card images are full the div*/
   /*card style*/
   /*card header*/
   /*bottom card animation*/
