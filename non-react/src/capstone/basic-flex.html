@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Flex</title>
+    <style>
+      #box {
+        background-color: #ffcccc;
+        border-bottom: 1px solid #87CEEB;
+        width: 500px;
+        height: 250px;
+        display: flex;
+        display: -webkit-flex;
+        /*better than text-align:center, it align the entire element*/
+        justify-content: center;
+        align-items: center;
+      }
+
+      #inner-box {
+        background: #9999cc;
+        width: 170px;
+        height: 100px;
+      }
+
+      /*Flexbox for linear layout*/
+      .box-container {
+        background: #ff6666;
+        display: flex;
+      }
+
+      .box {
+        border: 1px solid black;
+        background-color: deepskyblue;
+        height: 100px;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      #flex-box-1 {
+        flex-grow: 1;
+        order: 2;
+
+      }
+
+      #flex-box-2 {
+        flex-grow: 2;
+        order: 3;
+      }
+
+      #flex-box-3 {
+        flex-grow: 1;
+        order: 1;
+      }
+
+      #flex-container2 ul {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        flex-direction: row-reverse;
+      }
+
+      #flex-container2 ul li {
+        list-style-type: none;
+        background-color: #ccffcc;
+        width: 100px;
+        flex-grow: 1;
+        margin: 4px;
+        text-align: center;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+    <h1>Flex Box</h1>
+    <h2>Flexbox for Alignment</h2>
+
+    <div id="box">
+      <div id="inner-box">
+        Simple Text
+      </div>
+    </div>
+
+    <h2>Flexbox for Linear Layout</h2>
+    <div class="box-container" id="flex-container">
+      <div class="box" id="flex-box-1">Flex1</div>
+      <div class="box" id="flex-box-2">Flex2</div>
+      <div class="box" id="flex-box-3">Flex3</div>
+    </div>
+
+    <h2>Flex Wrapping</h2>
+    <div class="box-container" id="flex-container2">
+      <ul>
+        <li id="fw1">Go 1</li>
+        <li id="fw2">Go2</li>
+        <li id="fw3">Go3</li>
+        <li id="fw4">Go4</li>
+        <li id="fw5">Go5</li>
+      </ul>
+
+    </div>
+
+  </body>
+</html>
