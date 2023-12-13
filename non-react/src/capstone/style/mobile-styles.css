@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: #666;
+    margin: 0;
+}
+
+#wrapper {
+    width: 100%;
+    background: #fff;
+    position: relative;
+}
+
+header {
+    height: 85px;
+    background-color: #cff;
+    background-image: url(../images/header_bg.jpg);
+    background-size: cover;
+}
+
+header #logo {
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    width: 50px;
+    height: 50px;
+    padding: 4px 5px 1px 5px;
+}
+
+header #logo img {
+    width: 100%;
+    height: 100%;
+}
+
+header #tagline {
+    font-size: 1.8rem;
+    color: #fff;
+    position: absolute;
+    right: 1rem;
+}
+
+nav {
+    position: absolute;
+    background-color: #ddeddd;
+    top: 26px;
+    right: 0;
+    perspective: 800px;
+    perspective-origin: -64px;
+}
+
+nav #hamburger-button {
+    display: block;
+    background-color: #888;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 3px;
+    top: 9px;
+    border-radius: 5px;
+}
+
+nav #hamburger-button div {
+    background-color: #fff;
+    height: 4px;
+    margin: 7px;
+    transition: all 0.4s ease-in-out;
+}
+
+nav #nav-list {
+    margin: 0;
+    padding: 3px;
+    width: 200px;
+    position: absolute;
+    top: 50px;
+    right: 5px;
+    background-color: #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform: rotateX(90deg);
+    transform-origin: top;
+}
+
+nav #nav-list li {
+    list-style-type: none;
+    margin-top: 3px;
+    background-color: #666;
+}
+
+nav #nav-list li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 5px 18px;
+    font-size: 0.85rem;
+}
+
+nav #nav-list .has_submenu ul {
+    padding: 0;
+}
+
+nav #nav-list .has_submenu ul li {
+    padding-left: 0.6rem;
+    background-color: deepskyblue;
+}
+
+nav:hover #nav-list {
+    opacity: 1;
+    visibility: visible;
+    transform: rotateX(0);
+}
+
+nav:hover #top-bar {
+    transform: translate(0px, 8px) rotate(-135deg);
+}
+
+nav:hover #middle-bar {
+    opacity: 0;
+}
+
+nav:hover #bottom-bar {
+    transform: translate(0px, -10px) rotate(135deg);
+}
+
+/*show the navigation on hover*/
+
+/*# sourceMappingURL=mobile-styles.css.map */

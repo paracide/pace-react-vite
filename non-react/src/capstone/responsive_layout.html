@@ -1,0 +1,138 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <title>Popup Menus with CSS - Adv HTML5/CSS3</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet"
+          href="style/desktop_styles.css"
+          media="screen and (min-width: 768px)">
+
+    <link rel="stylesheet"
+          href="style/mobile-styles.css"
+          media="screen and (max-width:767px)"
+    >
+
+    <style>
+
+    </style>
+
+  </head>
+
+  <body>
+    <div id="wrapper">
+
+      <header>
+
+        <div id="logo">
+          <picture>
+            <source media="(min-width: 768px)"
+                    srcset="images/logo_100.png 1x, images/logo_200.png 2x">
+            <source media="(max-width: 767px)"
+                    srcset="images/logo_50.png 1x, images/logo_100.png 2x">
+            <img src="images/logo_100.png"
+                 width="100"
+                 height="100"
+                 alt="my logo">
+          </picture>
+        </div><!-- End LOGO Div -->
+
+        <div id="tagline">
+          Responsive FTW!
+        </div>
+
+      </header>
+
+      <nav>
+        <!--hamburger button-->
+        <a href="#" id="hamburger-button" aria-label="Menu-Button">
+          <div id="top-bar"></div>
+          <div id="middle-bar"></div>
+          <div id="bottom-bar"></div>
+        </a>
+
+        <ul id="nav-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li class="has_submenu"><a href="#">Services</a>
+
+            <ul id="services_menu">
+              <!--  li*6>a[href="#"]{changeme} -->
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Dry Cleaning</a></li>
+              <li><a href="#">Food Delivery</a></li>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Repairs</a></li>
+              <li><a href="#">Plumbing</a></li>
+            </ul>
+
+          </li>
+          <li class="has_submenu"><a href="#">Products</a>
+
+            <ul id="product_menu">
+              <!--  li*3>a[href="#"]{changeme}-->
+              <li><a href="#">Shirts</a></li>
+              <li><a href="#">Chairs</a></li>
+              <li><a href="#">Fusion Reactors</a></li>
+              <li><a href="#">Drones</a></li>
+              <li><a href="#">Guitars</a></li>
+            </ul>
+
+          </li>
+          <li><a href="#">Galleries</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+      <section id="content">
+        <h1>This is a level 1 heading</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium et facere ducimus possimus velit
+          nesciunt iusto quam corporis reiciendis laboriosam, eius ab, quisquam provident mollitia qui asperiores,
+          debitis labore, ex.</p>
+        <p>Fuga rerum odio veniam dolorem at qui alias, rem quod obcaecati tenetur! Error quisquam quidem, dolor
+          adipisci, repellendus magnam minus. Omnis corporis dolore iure quibusdam inventore explicabo non, deleniti
+          consectetur.</p>
+        <p>Quidem, dignissimos quasi id, blanditiis, doloribus eveniet numquam, aliquam necessitatibus labore vitae sint
+          harum. Dolore qui minus cumque voluptates nulla, reprehenderit a neque, sapiente iure voluptatibus facere eius
+          asperiores repellendus.</p>
+        <p>Soluta, excepturi provident ullam, libero dolor odit culpa, ipsa officiis autem doloremque modi consectetur
+          amet tempore dicta laborum magnam sint. Esse asperiores voluptatem labore tempore architecto possimus quam
+          maiores molestiae.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos odio porro exercitationem quibusdam voluptate,
+          quia, iusto est natus, sed praesentium maiores consectetur? Neque nihil, sequi commodi velit quaerat delectus
+          impedit.</p>
+        <p>Nesciunt voluptatum quo, corporis quod saepe molestiae vero aut dignissimos ipsa amet neque esse obcaecati
+          deleniti vel, magnam nihil dicta dolorem dolor, eum odit illo minima culpa corrupti! Blanditiis, illum!</p>
+        <p>Maiores, enim eligendi tenetur quas vitae eos corrupti quae, illo in omnis, dolorem obcaecati repellat, ut
+          deserunt. Consectetur aspernatur aliquam blanditiis atque nisi, deleniti accusantium ipsum quisquam. Adipisci,
+          repudiandae minima!</p>
+        <p>Repudiandae praesentium minus facere tenetur culpa sunt fuga accusamus, expedita temporibus repellat mollitia
+          nihil vitae ipsam similique delectus dolore, consequuntur sed. Possimus itaque commodi iste, ipsa tempore.
+          Eligendi, qui, neque.</p>
+        <p>Itaque consequatur dolore, laudantium quisquam excepturi consequuntur consectetur asperiores vel reiciendis
+          illo molestiae, incidunt maxime voluptas nesciunt delectus tenetur. Maiores sit expedita, id! Saepe porro
+          adipisci quam, praesentium culpa corporis!</p>
+        <p>Ad dicta, incidunt et dolor cupiditate illo vel! Provident reiciendis eaque vel sit. Eos eaque reprehenderit
+          ullam quae asperiores minus, molestiae veniam eum optio cum. A officia deleniti cupiditate consequuntur.</p>
+        <p>Quod incidunt ipsa at aspernatur debitis asperiores molestias officia iste temporibus praesentium officiis
+          rem tenetur perspiciatis dolore quisquam odio, eius, voluptas qui velit repellat itaque obcaecati. Dignissimos
+          voluptatibus fugiat illo?</p>
+        <p>Dignissimos numquam in illum nisi perferendis voluptate asperiores iusto explicabo nulla magni eligendi,
+          distinctio, quis dolores sint voluptatum impedit. Vitae fugit molestias deserunt incidunt, accusantium,
+          aspernatur pariatur soluta omnis ut!</p>
+        <p>Explicabo fuga, quia nostrum, accusamus commodi provident rerum saepe voluptatibus quo unde similique fugiat
+          consectetur, quam reiciendis debitis nesciunt, porro incidunt itaque eos delectus harum in excepturi odio
+          animi? Deleniti.</p>
+        <p>Iste in consectetur assumenda doloremque nam, pariatur magnam, atque, sint cumque autem modi, sapiente minima
+          porro perspiciatis excepturi! Possimus a explicabo qui ipsa, quo deleniti voluptatem laudantium aliquam
+          similique sed!</p>
+      </section>
+
+      <footer>This is the footer</footer>
+
+    </div>
+  </body>
+</html>
