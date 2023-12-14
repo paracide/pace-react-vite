@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+
+$dark-primary-color: #E64A19;
+$light-primary-color: #FFCCBC;
+$primary-color: #FF5722;
+$text-icon-color: #FFFFFF;
+$accent-color: #03A9F4;
+$primary-text: #212121;
+$second-text: #757575;
+$divider-color: #BDBDBD;
+
+body {
+  font-family: Oswald, Arial, Helvetica, sans-serif;
+  background-image: url("../media/bg.jpg");
+  margin: 0
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100vw;
+}
+
+header {
+  display: grid;
+  align-items: center;
+  background-color: #eee;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: sticky;
+  top: 0;
+  width: 100%;
+
+  #logo {
+    height: 2rem;
+  }
+}
+
+nav {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    li {
+      list-style-type: none;
+
+      a {
+        text-decoration: none;
+        color: $theme-primary-color;
+      }
+    }
+  }
+
+}
+
+footer {
+  background-color: $theme-second-color;
+  color: $theme-primary-color;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  #copyright {
+    grid-column: 1/4;
+    text-align: center;
+  }
+}
