@@ -24,7 +24,11 @@ h2 {
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.5rem;
 }
 
 /*cats*/
@@ -84,12 +88,12 @@ h3 {
 
 /*menu*/
 .home-menu-container {
-  padding: 100px;
+  padding: 50px 50px;
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: 3fr 3fr 2fr;
-  grid-gap: 10px;
+  grid-template-columns: 3fr 2fr 2fr;
+  grid-gap: 20px;
   background: #cccccc;
   place-items: center;
 
@@ -113,8 +117,8 @@ h3 {
   #coffee {
     grid-column: 2/3;
     grid-row: 1/3;
-    width: 309px;
-    height: 550px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     background: url("../media/home/coffee.jpg");
     background-size: cover;
