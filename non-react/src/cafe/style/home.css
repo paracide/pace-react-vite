@@ -21,6 +21,7 @@ body {
 
 header {
     display: grid;
+    padding: 50px 0 0 0;
     place-items: center;
     width: 100vw;
 }
@@ -81,6 +82,7 @@ nav:hover #menu-top {
 
 .wrapper {
     display: grid;
+    padding: 50px;
     place-items: center;
     width: 100vw;
 }
@@ -99,10 +101,12 @@ footer .contact-us {
     text-align: right;
 }
 
+footer .follow-us {
+    display: grid;
+}
 footer .social-media img {
     width: 2rem;
 }
-
 footer .copyright {
     text-align: center;
 }

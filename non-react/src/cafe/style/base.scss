@@ -30,6 +30,7 @@ body {
 
 header {
   display: grid;
+  padding: 50px 0 0 0;
   place-items: center;
   width: 100vw;
 
@@ -98,6 +99,7 @@ nav {
 
 .wrapper {
   display: grid;
+  padding: 50px;
   place-items: center;
   width: 100vw;
 }
@@ -116,8 +118,14 @@ footer {
     text-align: right
   }
 
-  .social-media img {
-    width: 2rem;
+  .follow-us {
+    display: grid;
+  }
+
+  .social-media {
+    img {
+      width: 2rem;
+    }
   }
 
   .copyright {
