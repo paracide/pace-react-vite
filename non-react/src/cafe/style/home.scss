@@ -1,11 +1,21 @@
 @import "base";
 
-/*main */
-.home-main-container {
+.wrapper {
+  background-image: url("../media/bg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+
+/*intro */
+.home-intro-container {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-rows: 4fr 2fr 4fr;
   place-items: center;
-  height: 90vh;
+  height: 100vh;
   color: $text-icon-color;
 }
 
@@ -19,8 +29,8 @@ h2 {
   height: 100vh;
   background-color: $text-icon-color;
   display: grid;
-  justify-items: center;
-
+  grid-template-rows: 3fr 1fr 6fr 1fr;
+  place-items: center;
 
   .home-cat-card-group {
     max-width: 960px;
@@ -46,8 +56,6 @@ h2 {
       transform: scale(1.1);
       filter: grayscale(0);
     }
-
-
     /*make the text on the image*/
     .home-card-text {
       position: absolute;
@@ -59,10 +67,7 @@ h2 {
       grid-template-rows: 10fr 1fr 22fr 11fr;
       place-items: center;
     }
-
-
   }
-
 
   .card-line {
     height: 1px;

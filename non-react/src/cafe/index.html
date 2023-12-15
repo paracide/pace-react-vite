@@ -9,46 +9,38 @@
     <link rel="stylesheet" href="style/base.css">
     <link rel="stylesheet" href="style/home.css">
     <style>
-      .wrapper {
-        background-image: url("media/bg.jpg");
-        background-attachment: fixed;
-        background-size: cover;
-      }
+
 
     </style>
 
   </head>
   <body>
     <div class="wrapper">
-      <header class="shadow">
-        <div class="logo">
-          <img id="logo" src="media/logo.png" alt="yanyan cafe">
-          <h1>Yanyan Cafe</h1>
-        </div>
-
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="components/cats.html">Cats</a></li>
-            <li><a href="components/menu.html">Menu</a></li>
-            <li><a href="components/order.html">Order</a></li>
-            <li><a href="components/club.html">Club</a></li>
-          </ul>
-        </nav>
+      <header>
+        <img id="logo" src="media/logo.png" alt="yanyan cafe">
       </header>
-
+      <nav class="transition shadow">
+        <div class="transition">
+          <div class="menu-shape" id="menu-top"></div>
+        </div>
+        <a href="index.html">Home</a>
+        <a class="second-menu" href="components/cats.html">Cats</a>
+        <a class="second-menu" href="components/menu.html">Menu</a>
+        <a class="second-menu" href="components/order.html">Order</a>
+        <a class="second-menu" href="components/club.html">Club</a>
+      </nav>
 
       <main>
-        <div class="home-main-container">
-          <h2 style="font-size: 12rem">Yanyan Cafe</h2>
-          <h3>Winnipeg Most Popular Cat cafe</h3>
-          <h3>
-            <button class="long-button">Our Location</button>
-          </h3>
+
+        <div class="home-intro-container">
+          <h1 style="font-size: 10rem">Yanyan Cafe</h1>
+          <h2>Winnipeg Most Popular Cat cafe</h2>
+          <div></div>
         </div>
 
         <div class="home-cats-container">
           <h2>CATS</h2>
+          <h3>Meet our exclusive "Cat Royalty" members, carefully chosen for enchanting companionship.</h3>
           <div class="home-cat-card-group">
             <div class="home-cat-card border shadow" id="xiuxiu">
               <img src="media/home/xiuxiu.png" alt="xiuxiu">
@@ -87,7 +79,7 @@
               </div>
             </div>
           </div>
-
+          <div></div>
         </div>
 
         <div class="home-menu-container">

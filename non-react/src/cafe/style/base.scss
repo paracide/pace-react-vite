@@ -1,8 +1,9 @@
-/*remove the interruption of marin*/
+/*remove the interruption of margin*/
 * {
   box-sizing: border-box;
 }
 
+/*remove the interruption of default margin in heading*/
 h1, h2, h3, h4, h5 {
   margin: 0;
 }
@@ -27,42 +28,69 @@ body {
   margin: 0
 }
 
-
 header {
   display: grid;
-  background-color: $primary-color;
-  color: $text-icon-color;
-  grid-template-columns: 2fr 1fr;
-  position: sticky;
-  top: 0;
+  place-items: center;
   width: 100vw;
-  height: 10vh;
-  padding: 0 10px;
-
-  /*make the logo img and cafe name center*/
-  .logo {
-    display: flex;
-    align-items: center;
-  }
 
   #logo {
-    height: 2rem;
+    height: 4rem;
   }
 }
 
-
 nav {
-  ul {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+  height: 40px;
+  width: 100px;
+  border-radius: 50px;
+  background: $text-icon-color;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  place-items: center;
+  /*fixed in the bottom on the all the elements*/
+  position: fixed;
+  bottom: 1.8rem;
+  z-index: 100;
+  overflow: hidden; /*make the second menu hidden*/
 
-    li {
-      list-style-type: none;
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: $second-text;
 
-      a {
-        text-decoration: none;
-        color: $text-icon-color;
-      }
+    /*change the color*/
+    &:hover {
+      text-decoration: underline;
+      color: $primary-color;
+    }
+  }
+
+  /*the second-menu dont show initially*/
+  .second-menu {
+    opacity: 0;
+  }
+
+  /*the cycle*/
+  #menu-top {
+    width: 20px;
+    height: 20px;
+    border: 2px solid $second-text;
+    border-radius: 50%;
+  }
+
+  /*when hover the nav, show all the menu*/
+  &:hover {
+    width: 300px;
+
+    .second-menu {
+      opacity: 1;
+    }
+
+    #menu-top {
+      width: 20px;
+      height: 20px;
+      border: 2px solid $second-text;
+      border-radius: 0;
     }
   }
 }
@@ -91,7 +119,7 @@ footer {
 }
 
 .shadow {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1); /* Material Design shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .transition {
