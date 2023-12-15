@@ -1,0 +1,75 @@
+@import "base";
+
+/*main */
+.home-main-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  height: 90vh;
+  color: $text-icon-color;
+}
+
+h2 {
+  font-size: 5em;
+}
+
+/*cats*/
+.home-cats-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: $text-icon-color;
+  display: grid;
+  justify-items: center;
+
+
+  .home-cat-card-group {
+    max-width: 960px;
+  }
+
+  .home-cat-card {
+    width: 220px;
+    height: 370px;
+    background-size: cover;
+    overflow: hidden;
+    color: $text-icon-color;
+    position: relative;
+    display: inline-block;
+
+    img {
+      height: 110%;
+      filter: grayscale(0.3);
+      object-fit: contain;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+      filter: grayscale(0);
+    }
+
+
+    /*make the text on the image*/
+    .home-card-text {
+      position: absolute;
+      width: 220px;
+      height: 370px;
+      top: 0;
+      text-align: center;
+      display: grid;
+      grid-template-rows: 10fr 1fr 22fr 11fr;
+      place-items: center;
+    }
+
+
+  }
+
+
+  .card-line {
+    height: 1px;
+    width: 50%;
+    background: $text-icon-color;
+  }
+
+}
+
+

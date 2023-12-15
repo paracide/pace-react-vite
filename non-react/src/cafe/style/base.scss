@@ -1,10 +1,21 @@
+/*remove the interruption of marin*/
 * {
   box-sizing: border-box;
 }
 
-$dark-primary-color: #E64A19;
-$light-primary-color: #FFCCBC;
-$primary-color: #FF5722;
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+/*when click the archer, scroll to the center*/
+html {
+  scroll-padding-top: 50vh;
+  scroll-behavior: smooth;
+}
+
+$dark-primary-color: #1976D2;
+$light-primary-color: #BBDEFB;
+$primary-color: #2196F3;
 $text-icon-color: #FFFFFF;
 $accent-color: #03A9F4;
 $primary-text: #212121;
@@ -13,29 +24,32 @@ $divider-color: #BDBDBD;
 
 body {
   font-family: Oswald, Arial, Helvetica, sans-serif;
-  background-image: url("../media/bg.jpg");
   margin: 0
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  width: 100vw;
-}
 
 header {
   display: grid;
-  align-items: center;
-  background-color: #eee;
-  grid-template-columns: 1fr 1fr 1fr;
+  background-color: $primary-color;
+  color: $text-icon-color;
+  grid-template-columns: 2fr 1fr;
   position: sticky;
   top: 0;
-  width: 100%;
+  width: 100vw;
+  height: 10vh;
+  padding: 0 10px;
+
+  /*make the logo img and cafe name center*/
+  .logo {
+    display: flex;
+    align-items: center;
+  }
 
   #logo {
     height: 2rem;
   }
 }
+
 
 nav {
   ul {
@@ -47,16 +61,21 @@ nav {
 
       a {
         text-decoration: none;
-        color: $theme-primary-color;
+        color: $text-icon-color;
       }
     }
   }
+}
 
+.wrapper {
+  display: grid;
+  place-items: center;
+  width: 100vw;
 }
 
 footer {
-  background-color: $theme-second-color;
-  color: $theme-primary-color;
+  background-color: $primary-color;
+  color: $text-icon-color;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
@@ -64,4 +83,41 @@ footer {
     grid-column: 1/4;
     text-align: center;
   }
+}
+
+.border {
+  border: 1px solid white;
+  border-radius: 20px;
+}
+
+.shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1); /* Material Design shadow */
+}
+
+.transition {
+  transition: all 0.3s ease-in-out;
+}
+
+.button {
+  height: 2.25rem;
+  width: 5rem;
+  color: $text-icon-color;
+  background: transparent;
+  text-decoration: none;
+  display: grid;
+  place-items: center;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+
+.long-button {
+  height: 2.25rem;
+  width: 10rem;
+  color: $text-icon-color;
+  background: transparent;
+  text-decoration: none;
+  display: grid;
+  place-items: center;
+  border: 1px solid white;
+  border-radius: 20px;
 }

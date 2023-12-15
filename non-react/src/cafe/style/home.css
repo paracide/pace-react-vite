@@ -1,0 +1,178 @@
+/*remove the interruption of marin*/
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+
+/*when click the archer, scroll to the center*/
+html {
+    scroll-padding-top: 50vh;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Oswald, Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+header {
+    display: grid;
+    background-color: #2196F3;
+    color: #FFFFFF;
+    grid-template-columns: 2fr 1fr;
+    position: sticky;
+    top: 0;
+    width: 100vw;
+    height: 10vh;
+    padding: 0 10px;
+    /*make the logo img and cafe name center*/
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header #logo {
+    height: 2rem;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.wrapper {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+}
+
+footer {
+    background-color: #2196F3;
+    color: #FFFFFF;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+footer #copyright {
+    grid-column: 1/4;
+    text-align: center;
+}
+
+.border {
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+.shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1); /* Material Design shadow */
+}
+
+.transition {
+    transition: all 0.3s ease-in-out;
+}
+
+.button {
+    height: 2.25rem;
+    width: 5rem;
+    color: #FFFFFF;
+    background: transparent;
+    text-decoration: none;
+    display: grid;
+    place-items: center;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+.long-button {
+    height: 2.25rem;
+    width: 10rem;
+    color: #FFFFFF;
+    background: transparent;
+    text-decoration: none;
+    display: grid;
+    place-items: center;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+/*main */
+.home-main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    height: 90vh;
+    color: #FFFFFF;
+}
+
+h2 {
+    font-size: 5em;
+}
+
+/*cats*/
+.home-cats-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFFFF;
+    display: grid;
+    justify-items: center;
+}
+
+.home-cats-container .home-cat-card-group {
+    max-width: 960px;
+}
+
+.home-cats-container .home-cat-card {
+    width: 220px;
+    height: 370px;
+    background-size: cover;
+    overflow: hidden;
+    color: #FFFFFF;
+    position: relative;
+    display: inline-block;
+    /*make the text on the image*/
+}
+
+.home-cats-container .home-cat-card img {
+    height: 110%;
+    filter: grayscale(0.3);
+    object-fit: contain;
+    transition: all 0.3s ease-in-out;
+}
+
+.home-cats-container .home-cat-card:hover img {
+    transform: scale(1.1);
+    filter: grayscale(0);
+}
+
+.home-cats-container .home-cat-card .home-card-text {
+    position: absolute;
+    width: 220px;
+    height: 370px;
+    top: 0;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 10fr 1fr 22fr 11fr;
+    place-items: center;
+}
+
+.home-cats-container .card-line {
+    height: 1px;
+    width: 50%;
+    background: #FFFFFF;
+}
+
+/*# sourceMappingURL=home.css.map */

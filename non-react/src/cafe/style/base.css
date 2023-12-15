@@ -1,17 +1,70 @@
-/* Error: Undefined variable.
- *    ,
- * 50 |         color: $theme-primary-color;
- *    |                ^^^^^^^^^^^^^^^^^^^^
- *    '
- *   base.scss 50:16  root stylesheet */
-
-body::before {
-    font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-    "Droid Sans Mono", monospace, monospace;
-    white-space: pre;
-    display: block;
-    padding: 1em;
-    margin-bottom: 1em;
-    border-bottom: 2px solid black;
-    content: "Error: Undefined variable.\a    \2577 \a 50 \2502          color: $theme-primary-color;\a    \2502                 ^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   base.scss 50:16  root stylesheet";
+/*remove the interruption of marin*/
+* {
+    box-sizing: border-box;
 }
+
+/*when click the archer, scroll to the center*/
+html {
+    scroll-padding-top: 50vh;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Oswald, Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100vw;
+}
+
+header {
+    display: grid;
+    align-items: center;
+    background-color: #2196F3;
+    color: #FFFFFF;
+    grid-template-columns: 2fr 1fr;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    /*make the logo img and cafe name center*/
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header #logo {
+    height: 2rem;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+footer {
+    background-color: #2196F3;
+    color: #FFFFFF;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+footer #copyright {
+    grid-column: 1/4;
+    text-align: center;
+}
+
+/*# sourceMappingURL=base.css.map */

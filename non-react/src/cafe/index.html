@@ -5,15 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap"
           rel="stylesheet">
-    <title>Fluffy Cafe</title>
+    <title>Yanyan Cafe</title>
     <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/home.css">
+    <style>
+      .wrapper {
+        background-image: url("media/bg.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+      }
+
+    </style>
+
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <div>
-          <img id="logo" src="media/logo.png" alt="fluffy cafe">
+      <header class="shadow">
+        <div class="logo">
+          <img id="logo" src="media/logo.png" alt="yanyan cafe">
+          <h1>Yanyan Cafe</h1>
         </div>
+
         <nav>
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -23,16 +35,63 @@
             <li><a href="components/club.html">Club</a></li>
           </ul>
         </nav>
-        <div>
-          <button>Login</button>
-          <button>Join</button>
-        </div>
       </header>
 
 
       <main>
-        <div>
-          <h1>H1</h1>
+        <div class="home-main-container">
+          <h2 style="font-size: 12rem">Yanyan Cafe</h2>
+          <h3>Winnipeg Most Popular Cat cafe</h3>
+          <h3>
+            <button class="long-button">Our Location</button>
+          </h3>
+        </div>
+
+        <div class="home-cats-container">
+          <h2>CATS</h2>
+          <div class="home-cat-card-group">
+            <div class="home-cat-card border shadow" id="xiuxiu">
+              <img src="media/home/xiuxiu.png" alt="xiuxiu">
+              <div class="home-card-text">
+                <div class="home-cat-title">Baby</div>
+                <div class="card-line"></div>
+                <h3 class="home-cat-name">Xiuxiu</h3>
+                <a class="button" href="components/cats.html">Explore</a>
+              </div>
+            </div>
+            <div class="home-cat-card border shadow" id="huabi">
+              <img src="media/home/xiuxiu.png" alt="huabi">
+              <div class="home-card-text">
+                <div class="home-cat-title">Evil</div>
+                <div class="card-line"></div>
+                <h3 class="home-cat-name">Huabi</h3>
+                <a class="button" href="components/cats.html">Explore</a>
+              </div>
+            </div>
+            <div class="home-cat-card border shadow" id="zhangmeili">
+              <img src="media/home/xiuxiu.png" alt="xiuxiu">
+              <div class="home-card-text">
+                <div class="home-cat-title">Angel</div>
+                <div class="card-line"></div>
+                <h3 class="home-cat-name">Zhangmeili</h3>
+                <a class="button" href="components/cats.html">Explore</a>
+              </div>
+            </div>
+            <div class="home-cat-card border shadow" id="pipi">
+              <img src="media/home/xiuxiu.png" alt="xiuxiu">
+              <div class="home-card-text">
+                <div class="home-cat-title">Aho</div>
+                <div class="card-line"></div>
+                <h3 class="home-cat-name">Pipi</h3>
+                <a class="button" href="components/cats.html">Explore</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="home-menu-container">
+          <h2>MENU</h2>
         </div>
 
 
