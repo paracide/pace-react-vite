@@ -38,6 +38,7 @@ header {
   }
 }
 
+/*navigation*/
 nav {
   height: 40px;
   width: 100px;
@@ -102,10 +103,18 @@ nav {
 }
 
 footer {
-  background-color: $primary-color;
   color: $text-icon-color;
+  background: $accent-color;
+  height: 50vh;
+  width: 100vw;
   display: grid;
+  padding: 50px;
   grid-template-columns: 1fr 1fr 1fr;
+
+  .contact-us {
+    display: grid;
+    text-align: right
+  }
 
   #copyright {
     grid-column: 1/4;
@@ -114,7 +123,7 @@ footer {
 }
 
 .border {
-  border: 1px solid white;
+  border: 2px solid white;
   border-radius: 20px;
 }
 
@@ -134,7 +143,7 @@ footer {
   text-decoration: none;
   display: grid;
   place-items: center;
-  border: 1px solid white;
+  border: 2px solid white;
   border-radius: 20px;
 }
 
@@ -149,3 +158,4 @@ footer {
   border: 1px solid white;
   border-radius: 20px;
 }
+
