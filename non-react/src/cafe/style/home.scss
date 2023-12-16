@@ -40,13 +40,9 @@ h4 {
   grid-template-rows: 3fr 1fr 6fr 1fr;
   place-items: center;
 
-  .home-cat-card-group {
-    max-width: 960px;
-  }
-
   .home-cat-card {
-    width: 220px;
-    height: 370px;
+    width: 225px;
+    height: 400px;
     background-size: cover;
     overflow: hidden;
     color: $text-icon-color;
@@ -54,7 +50,7 @@ h4 {
     display: inline-block;
 
     img {
-      height: 110%;
+      height: 100%;
       filter: grayscale(0.3);
       object-fit: contain;
       transition: all 0.3s ease-in-out;
