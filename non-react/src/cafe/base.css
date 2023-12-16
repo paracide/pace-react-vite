@@ -6,6 +6,7 @@
 /*remove the interruption of default margin in heading*/
 h1, h2, h3, h4, h5 {
     margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /*when click the archer, scroll to the center*/
@@ -25,7 +26,6 @@ header {
     place-items: center;
     width: 100vw;
 }
-
 header #logo {
     height: 4rem;
 }
@@ -56,38 +56,31 @@ nav {
     /*the cycle*/
     /*when hover the nav, show all the menu*/
 }
-
 nav a {
     display: inline-block;
     text-decoration: none;
     color: #757575;
     /*change the color*/
 }
-
 nav a:hover {
     text-decoration: underline;
     color: #9E9E9E;
 }
-
 nav .second-menu {
     opacity: 0;
 }
-
 nav #menu-top {
     width: 20px;
     height: 20px;
     border: 2px solid #757575;
     border-radius: 50%;
 }
-
 nav:hover {
     width: 300px;
 }
-
 nav:hover .second-menu {
     opacity: 1;
 }
-
 nav:hover #menu-top {
     width: 20px;
     height: 20px;
@@ -109,20 +102,16 @@ footer {
     padding: 50px;
     grid-template-columns: 1fr 1fr 1fr;
 }
-
 footer .contact-us {
     display: grid;
     text-align: right;
 }
-
 footer .follow-us {
     display: grid;
 }
-
 footer .social-media img {
     width: 2rem;
 }
-
 footer .copyright {
     text-align: center;
 }
@@ -143,8 +132,8 @@ footer .copyright {
 .button {
     height: 2.25rem;
     width: 5rem;
-    color: #ffffff;
-    background: transparent;
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
     text-decoration: none;
     display: grid;
     place-items: center;

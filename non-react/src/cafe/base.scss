@@ -6,6 +6,7 @@
 /*remove the interruption of default margin in heading*/
 h1, h2, h3, h4, h5 {
   margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /*when click the archer, scroll to the center*/
@@ -154,8 +155,8 @@ footer {
 .button {
   height: 2.25rem;
   width: 5rem;
-  color: $text-icon-color;
-  background: transparent;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
   text-decoration: none;
   display: grid;
   place-items: center;
