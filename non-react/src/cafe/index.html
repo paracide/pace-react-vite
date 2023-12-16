@@ -6,9 +6,239 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap"
           rel="stylesheet">
     <title>Yanyan Cafe</title>
-    <link rel="stylesheet" href="style/base.scss">
-    <link rel="stylesheet" href="style/home.scss">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="mobile.css">
 
+    <!--desktop-->
+    <style>
+      .wrapper {
+        background-image: url("media/bg.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+      }
+
+      /*intro */
+      .home-intro-container {
+        display: grid;
+        grid-template-rows: 4fr 2fr 4fr;
+        place-items: center;
+        height: 100vh;
+        color: #ffffff;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 10rem;
+      }
+
+      h2 {
+        font-size: 5rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      h4 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        padding: 1rem;
+      }
+
+      /*cats*/
+      .home-cats-container {
+        width: 100vw;
+        height: 100vh;
+        background-color: #ffffff;
+        display: grid;
+        grid-template-rows: 3fr 1fr 6fr 1fr;
+        place-items: center;
+      }
+
+      .home-cats-container .home-cat-card {
+        width: 17vw;
+        height: 30vw;
+        background-size: cover;
+        overflow: hidden;
+        color: #ffffff;
+        position: relative;
+        display: inline-block;
+        /*make the text on the image*/
+      }
+
+      .home-cats-container .home-cat-card-group {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1rem;
+      }
+
+      .home-cats-container .home-cat-card img {
+        max-height: 100%;
+        filter: grayscale(0.3);
+        object-fit: contain;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .home-cats-container .home-cat-card:hover img {
+        transform: scale(1.1);
+        filter: grayscale(0);
+      }
+
+      .home-cats-container .home-cat-card .home-card-text {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        text-align: center;
+        display: grid;
+        grid-template-rows: 10fr 1fr 22fr 11fr;
+        place-items: center;
+      }
+
+      .home-cats-container .card-line {
+        height: 1px;
+        width: 50%;
+        background: #ffffff;
+      }
+
+      /*menu*/
+      .home-menu-container {
+        padding: 5vw;
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 3fr 2fr 2fr;
+        grid-gap: 1rem;
+        background: #cccccc;
+        place-items: center;
+      }
+
+
+      .home-menu-container .menu-img-container {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        color: #ffffff;
+        grid-template-rows: 5fr 2fr;
+        place-items: center;
+        filter: sepia(0.3);
+        /*menu img animation*/
+      }
+
+      .home-menu-container .menu-img-container:hover {
+        filter: sepia(0);
+      }
+
+      #menu-intro {
+        grid-row: 2/3;
+      }
+
+      #coffee {
+        grid-column: 2/3;
+        grid-row: 1/3;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: url("media/home/coffee.jpg");
+        background-size: cover;
+      }
+
+      #donut {
+        width: 100%;
+        height: 100%;
+        background: url("media/home/donut.jpg");
+        background-size: cover;
+      }
+
+      #beverage {
+        width: 100%;
+        height: 100%;
+        background: url("media/home/beverage.jpg");
+        background-size: cover;
+      }
+
+      /*about us*/
+      .home-us-container {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      .home-us-container .home-us-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+        background: #fff;
+        width: 90%;
+        height: 70%;
+        border-radius: 20px;
+        padding: 5vw;
+      }
+
+      .home-us-container .home-us-wrapper #us-img {
+        grid-row: 1/3;
+        grid-column: 2/3;
+        overflow: hidden;
+      }
+
+      .home-us-container .home-us-wrapper #us-img img {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+
+    <!--mobile-->
+    <style>
+      @media screen and (max-width: 767px) {
+        /*smaller font size for title*/
+        h1 {
+          font-size: 4rem;
+        }
+
+        h2 {
+          font-size: 3rem;
+        }
+
+        /*cats*/
+        .home-cats-container .home-cat-card {
+          width: 45vw;
+          height: 80vw;
+        }
+
+        /*cat card two column in mobile*/
+        .home-cats-container .home-cat-card-group {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        /*menu 1 column in mobile*/
+        .home-menu-container {
+          grid-template-columns: 1fr;
+        }
+
+        /*make them normal order*/
+        #menu-intro, #coffee, #donut, #beverage {
+          grid-column: unset;
+          grid-row: unset;
+        }
+
+        .home-us-container .home-us-wrapper {
+          grid-template-columns: 1fr;
+        }
+
+        .home-us-container .home-us-wrapper #us-img {
+          grid-row: unset;
+          grid-column: unset;
+          overflow: hidden;
+        }
+
+      }
+    </style>
   </head>
   <body>
     <div class="wrapper">
@@ -29,14 +259,14 @@
       <main>
 
         <div class="home-intro-container">
-          <h1 style="font-size: 10rem">Yanyan Cafe</h1>
-          <h2>Winnipeg Most Popular Cat cafe</h2>
+          <h1>Yanyan Cafe</h1>
+          <h2>Winnipeg Most Popular Cat Cafe</h2>
           <div></div>
         </div>
 
         <div class="home-cats-container">
           <h2>CATS</h2>
-          <h3>Meet our exclusive "Cat Royalty" members, carefully chosen for enchanting companionship.</h3>
+          <p>Meet our exclusive "Cat Royalty" members, carefully chosen for enchanting companionship.</p>
           <div class="home-cat-card-group">
             <div class="home-cat-card border shadow" id="xiuxiu">
               <img src="media/home/xiuxiu.jpg" alt="xiuxiu">
@@ -68,7 +298,7 @@
             <div class="home-cat-card border shadow" id="pipi">
               <img src="media/home/pipi.jpg" alt="pipi">
               <div class="home-card-text">
-                <div class="home-cat-title">Aho</div>
+                <div class="home-cat-title">Silly</div>
                 <div class="card-line"></div>
                 <h4 class="home-cat-name">Pipi</h4>
                 <a class="button" href="components/cats.html">Explore</a>
@@ -80,18 +310,22 @@
 
         <div class="home-menu-container">
           <h2>MENU</h2>
+
+          <p id="menu-intro">Indulge in a delightful culinary experience with YanYan Cafe's innovative menu, featuring
+            carefully
+            curated beverages and snacks.
+          </p>
           <div id="coffee" class="border menu-img-container transition">
-            <h4>COFFEE</h4>
+            <h3>COFFEE</h3>
             <a class="button" href="components/menu.html">Explore</a>
           </div>
           <div id="donut" class="border menu-img-container transition">
-            <h4>SNACK</h4>
+            <h3>SNACK</h3>
             <a class="button" href="components/menu.html">Explore</a>
           </div>
-          <h3>Indulge in a delightful culinary experience with YanYan Cafe's innovative menu, featuring carefully
-            curated beverages and snacks that promise a dual delight of deliciousness and relaxation.</h3>
+
           <div id="beverage" class="border menu-img-container transition">
-            <h4>BEVERAGES</h4>
+            <h3>BEVERAGES</h3>
             <a class="button" href="components/menu.html">Explore</a>
           </div>
         </div>
@@ -99,12 +333,13 @@
         <div class="home-us-container">
           <div class="home-us-wrapper">
             <h2>ABOUT US</h2>
+            <p>Welcome to YanYan Cafe, where passion for felines meets the love for a good cuppa! Nestled in the heart
+              of Winnipeg, we are a cozy space dedicated to creating memorable moments with our charming cats.
+            </p>
             <div id="us-img">
               <img class="border" src="media/home/us.jpg" alt="">
-
             </div>
-            <h3>Welcome to YanYan Cafe, where passion for felines meets the love for a good cuppa! Nestled in the heart
-              of Winnipeg, we are a cozy space dedicated to creating memorable moments with our charming cats. </h3>
+
           </div>
         </div>
       </main>
@@ -123,7 +358,6 @@
           <div>664 Portage Ave, Winnipeg, MB, Canada</div>
         </div>
       </footer>
-
     </div>
   </body>
 </html>

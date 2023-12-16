@@ -39,6 +39,12 @@ header {
   }
 }
 
+.wrapper {
+  display: grid;
+  padding: 50px;
+  place-items: center;
+  width: 100vw;
+}
 /*navigation*/
 nav {
   height: 40px;
@@ -97,16 +103,15 @@ nav {
   }
 }
 
-.wrapper {
+
+main {
   display: grid;
-  padding: 50px;
-  place-items: center;
-  width: 100vw;
+  grid-template-columns: 1fr;
 }
 
 footer {
   color: $text-icon-color;
-  background: $accent-color;
+  background: $dark-primary-color;
   height: 30vh;
   width: 100vw;
   display: grid;
@@ -155,18 +160,6 @@ footer {
   display: grid;
   place-items: center;
   border: 2px solid white;
-  border-radius: 20px;
-}
-
-.long-button {
-  height: 2.25rem;
-  width: 10rem;
-  color: $text-icon-color;
-  background: transparent;
-  text-decoration: none;
-  display: grid;
-  place-items: center;
-  border: 1px solid white;
   border-radius: 20px;
 }
 
