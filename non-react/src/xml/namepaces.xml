@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<furn:toms_tables xmlns:furn="http://yodon.top/">
+    <table xmlns="http://cafe.yodon.top/">
+        <tr>
+            <td>Dining room tables</td>
+            <td>Kitchen tables</td>
+            <td>Turned tables</td>
+        </tr>
+    </table>
+
+    <furn:dining_room>
+        <furn:table>
+            <furn:finish>Laquer</furn:finish>
+            <furn:wood>Teak</furn:wood>
+            <furn:dimensions>4 x 6</furn:dimensions>
+            <furn:description>
+                The following text is important:
+                <strong>NAMESPACES!</strong>
+            </furn:description>
+        </furn:table>
+    </furn:dining_room>
+</furn:toms_tables>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<toms_tables xmlns="http://ttt.yodon.top/">
+    <table xmlns="http://cafe.yodon.top/">
+        <tr>
+            <td>Dining room tables</td>
+            <td>Kitchen tables</td>
+            <td>Turned tables</td>
+        </tr>
+    </table>
+
+    <dining_room>
+        <table>
+            <finish>Laquer</finish>
+            <wood>Teak</wood>
+            <dimensions>4 x 6</dimensions>
+            <description>
+                The following text is important:
+                <strong>NAMESPACES!</strong>
+            </description>
+        </table>
+    </dining_room>
+</toms_tables>
