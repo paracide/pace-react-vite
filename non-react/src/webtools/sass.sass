@@ -1,0 +1,47 @@
+$text-color: #225
+$bg-color: #900
+$radialGradient: radial-gradient(#cfc, #337)
+
+@mixin circles($borderWidth,$borderColor)
+  border-radius: 50%
+  text-align: center
+  background-color: deepskyblue
+  border: $borderWidth solid $borderColor
+
+=prefix-trans($option)
+  -webkit-transition: $option
+  transition: $option
+
+body
+  font-family: "Handlee", Arial, sans-serif
+  font-size: 10px
+  color: $text-color
+
+h1
+  background-color: $bg-color
+
+h2
+  background-color: #3D78D8
+
+#small_circle
+  width: 70px
+  height: 70px
+  @include circles(1px, #111)
+  @include prefix-trans(all 1s)
+
+#medium_circle
+  width: 100px
+  height: 100px
+  @include circles(2px, #111)
+
+#large_circle
+  width: 350px
+  height: 350px
+  @include circles(3px, #111)
+
+#small_circle,
+#medium_circle,
+#large_circle
+  &:hover
+    transform: scale(1.5)
+
