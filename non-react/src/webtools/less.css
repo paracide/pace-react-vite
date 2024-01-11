@@ -1,0 +1,42 @@
+body {
+    font-family: "Roboto Flex", Arial, Helvetica, sans-serif;
+    font-size: 102px;
+    color: #701010;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: #560;
+}
+
+.small_circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: radial-gradient(#cfc, #585);
+    text-align: center;
+    font-size: 12px;
+    padding-top: 1rem;
+}
+
+.medium_circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(#cfc, #585);
+    text-align: center;
+    font-size: 18px;
+    padding-top: 1.4rem;
+}
+
+#large_circle {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(#cfc, #585);
+    text-align: center;
+    font-size: 22px;
+    padding-top: 2rem;
+}
+
+/*# sourceMappingURL=less.css.map */

@@ -1,0 +1,50 @@
+body {
+    font-family: "Handlee", Arial, sans-serif;
+    font-size: 10px;
+    color: #225;
+}
+
+h1 {
+    background-color: #900;
+}
+
+h2 {
+    background-color: #3D78D8;
+}
+
+#small_circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: deepskyblue;
+    border: 1px solid #111;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+
+#medium_circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: deepskyblue;
+    border: 2px solid #111;
+}
+
+#large_circle {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: deepskyblue;
+    border: 3px solid #111;
+}
+
+#small_circle:hover,
+#medium_circle:hover,
+#large_circle:hover {
+    transform: scale(1.5);
+}
+
+/*# sourceMappingURL=sass.css.map */
