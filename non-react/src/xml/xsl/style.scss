@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap');
+
+body {
+  font-family: Poppins, sans-serif;
+}
+
+table {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  width: 600px;
+}
+
+td, th {
+  padding: 6px;
+  border: 1px solid #000;
+  vertical-align: top;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+  font-weight: 700;
+}
+
+td ol li {
+  margin-bottom: 0.3rem;
+}
+
+tr {
+  &:nth-child(even) {
+    background: #ddd;
+
+  }
+
+  &:nth-child(odd) {
+    background: #3D78D8;
+  }
+}
+
+.year-view {
+  font-style: italic;
+  font-size: 0.8rem;
+  color: #00b;
+}

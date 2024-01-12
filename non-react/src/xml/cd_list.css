@@ -18,4 +18,41 @@ cd {
     padding: 15px;
     width: 400px;
     background: linear-gradient(#676, #232);
+    color: white;
 }
+
+cd title {
+    font-family: "Handlee", Arial, sans-serif;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+cd artist {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+cd song {
+    display: list-item;
+    list-style-position: inside;
+    margin-top: 0.3rem;
+    list-style-type: "\01F4BF";
+}
+
+cd year {
+    display: block;
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-style: oblique;
+}
+
+cd year:before {
+    content: "("
+}
+
+cd year:after {
+    content: ")"
+}
+
