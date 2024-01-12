@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="cd_list.css" ?>
+
 <cd_info>
+
     <cd>
         <title>Night Bugs</title>
         <artist>Sarah Slean</artist>

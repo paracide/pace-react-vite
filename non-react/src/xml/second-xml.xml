@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<books>
+    <book>
+        <author>Stephen King</author>
+        <title>The Shining</title>
+        <description>
+            <![CDATA[
+        This book is about shining shoes. No, it's not. It's a scary story
+        by Stephen King. It is NOT about <html>, nor does it contain tags
+        like <div> and <span>.
+      ]]>
+        </description>
+    </book>
+
+    <book>
+        <author>J K Rowling</author>
+        <title>Harry Potter</title>
+    </book>
+</books>

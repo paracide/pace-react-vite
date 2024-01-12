@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<books xmlns="http://www.uwinnipeg.ca/bookstore">
+    <book>
+        <title>Malice</title>
+        <number_of_pages>288</number_of_pages>
+        <published_date>Oct 9, 2014</published_date>
+        <isbn xmlns="http://www.isbn.org/isbn">1408705869</isbn>
+        <publisher xmlns="https://www.littlebrown.co.uk/">Little, Brown Book Group, 2014</publisher>
+        <category>Fiction</category>
+        <author>Keigo Higashino</author>
+    </book>
+    <book>
+        <title>The Tokyo Zodiac Murders</title>
+        <number_of_pages>252</number_of_pages>
+        <published_date>December 1, 1981</published_date>
+        <isbn xmlns="http://www.isbn.org/isbn">9784925080811</isbn>
+        <publisher xmlns="https://ibcbooks.com/">September 1, 2005 by IBC Books</publisher>
+        <category>Mystery</category>
+        <author>Soji Shimada</author>
+    </book>
+</books>

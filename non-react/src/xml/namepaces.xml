@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<furn:toms_tables xmlns:furn="http://yodon.top/">
-    <table xmlns="http://cafe.yodon.top/">
-        <tr>
-            <td>Dining room tables</td>
-            <td>Kitchen tables</td>
-            <td>Turned tables</td>
-        </tr>
-    </table>
+
+
+<furn:toms_tables xmlns:furn="http://tomsgreattables.com"
+                  xmlns:html="http://www.w333333333333.org/TR/html4">
+    <!-- Namespaces with prefixes can be defined anywhere, but it's usually a good idea
+         to put them in your ROOT element. This way, they can be accessed
+         from anywhere in the document.
+
+         Prefixes need to be bound to a specific NAMESPACE. You actually
+         can't use prefixes without a BOUND namespace.
+
+         Here, we will have 2 prefixes BOUND to their respective URL
+         namespaces -->
+    <html:table>
+        <html:tr>
+            <html:td>Dining room tables</html:td>
+            <html:td>Kitchen tables</html:td>
+            <html:td>Turned tables</html:td>
+        </html:tr>
+    </html:table>
 
     <furn:dining_room>
         <furn:table>
@@ -15,8 +27,9 @@
             <furn:dimensions>4 x 6</furn:dimensions>
             <furn:description>
                 The following text is important:
-                <strong>NAMESPACES!</strong>
+                <html:strong>NAMESPACES!</html:strong>
             </furn:description>
         </furn:table>
     </furn:dining_room>
+
 </furn:toms_tables>
