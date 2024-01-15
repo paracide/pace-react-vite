@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="cd_list_long_template.xsl" ?>
+
+<?xml-stylesheet type="text/xsl" href="cd_list_apply_templates.xsl" ?>
+
 <cd_info>
 
 

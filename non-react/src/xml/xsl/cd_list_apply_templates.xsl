@@ -72,62 +72,59 @@
                         <th>Artist</th>
                         <th>Songs</th>
                     </tr>
-                    <!-- Row with data from the XML file -->
-                    <!-- Start looping through the CD elements. Make a TR for
-                         each one. -->
-                    <!-- We need to BUILD the XPATH through all the parent
-                         elements. We want to get to /cd_info/cd, but we
-                         already used the "/" in template. So now, we exclude
-                         the "/" and go to the next part of the XPATH.
-
-                         It can be helpful to first construct the full,
-                         absolute XPATH as a REFERENCE so we know what it
-                         should look like. So for the title, we would need
-
-                         /cd_info/cd/title.
-
-                         We will build this below. -->
-
                     <!-- Start looping here -->
-                    <xsl:for-each select="cd_info/cd">
-                        <!-- At this point, "cd" is our CONTEXT NODE. This is
-                             where we currently are in the XML document -->
 
-                        <!-- SORT always right after a loop, in this case for-each-->
-                        <xsl:sort select="artist"/>
-                        <!-- Secondary sorts can be accomplished by simply using
-                             another sort tag.-->
-                        <xsl:sort select="year" order="descending"/>
+                    <!-- We will create the same results as the previous file
+                         which used <xsl:for-each>, but this time we will use
+                         a different method with XSL templates. -->
+                    <!-- We want to "insert" the "cd" template contents right
+                         here. You can use <xsl: apply-templates />, but this actually
+                         tells the processor to apply EVERY extra template in
+                         the document. To apply a *specific* template, we use
+                         the "select" attribute. -->
+                    <xsl:apply-templates select="cd_info/cd"/>
 
-                        <tr>
-                            <td>
-                                <xsl:value-of select="title"/>
-                                <span class="yearview">
-                                    (<xsl:value-of select="year"/>)
-                                </span>
-                            </td>
-                            <td>
-                                <xsl:value-of select="artist"/>
-                            </td>
-                            <td>
-                                <!-- Loop through all the <song> tags in the current CD -->
-                                <ol>
-                                    <xsl:for-each select="song">
-                                        <li>
-                                            <xsl:value-of select="."/>
-                                        </li>
-                                    </xsl:for-each>
-                                </ol>
-                            </td>
-                        </tr>
-                        <!-- Stop looping here -->
-                    </xsl:for-each>
                 </table>
-
 
             </body>
         </html>
 
     </xsl:template>
 
+    <!-- "Extra" templates go here -->
+
+    <!-- These are "extra" templates that we can use in our document. -->
+    <!-- This template will match every "cd" element. -->
+    <!-- Don't use XPATH here, just "match" the element you want to loop through.
+         This template does not "run" unless we specifically tell it to. -->
+
+    <xsl:template match="cd">
+        <tr>
+            <td>
+                <xsl:value-of select="title"/>
+            </td>
+            <td>
+                <xsl:value-of select="artist"/>
+            </td>
+            <td>
+                <ol>
+                    <xsl:apply-templates select="song"/>
+                </ol>
+            </td>
+        </tr>
+    </xsl:template>
+
+    <!-- Template for SONGS -->
+    <xsl:template match="song">
+        <li>
+            <xsl:value-of select="."/>
+        </li>
+    </xsl:template>
 </xsl:stylesheet>
+
+
+
+
+
+
+
