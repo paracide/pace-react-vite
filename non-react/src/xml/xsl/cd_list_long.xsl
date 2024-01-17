@@ -60,12 +60,23 @@
                     font-size: 0.8em;
                     color: #00b;
                     }
+
+                    .brightgreen{
+                    color:#0a0;
+                    font-size:1.2rem;
+                    }
+
                 </style>
             </head>
 
             <body>
                 <h1>List of CD's (from XML)</h1>
-
+                <xsl:variable name="mylink" select="cd_info/link_url"/>
+                <p>
+                    <a href="{$mylink}" target="_blank" ref="noopener">
+                        My Music
+                    </a>
+                </p>
                 <table>
                     <tr>
                         <th>Title</th>
@@ -101,7 +112,18 @@
 
                         <tr>
                             <td>
-                                <xsl:value-of select="title"/>
+                                <xsl:value-of select="position()"/>.
+                                <xsl:choose>
+                                    <xsl:when test="title/@remastered ='yes' ">
+                                        <span class="brightgreen">
+                                            <xsl:value-of select="title"/>
+                                        </span>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="title"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+
                                 <span class="yearview">
                                     (<xsl:value-of select="year"/>)
                                 </span>
@@ -121,6 +143,7 @@
                             </td>
                         </tr>
                         <!-- Stop looping here -->
+
                     </xsl:for-each>
                 </table>
 

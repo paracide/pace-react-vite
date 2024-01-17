@@ -7,7 +7,6 @@
          done through PHP/ASP/etc then the user should see indented
          HTML source code if indent="yes" is present -->
     <xsl:output method="html" indent="yes" encoding="utf-8"/>
-
     <!-- "Match" the entire XML document, using the "document root" (/) -->
     <xsl:template match="/">
         <!-- Create base HTML Tags -->
