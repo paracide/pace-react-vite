@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<site>
+    <title>Yan Games Network</title>
+    <menus>
+        <game>
+            <name>Red Death Redemption 2</name>
+            <score>10/10</score>
+            <url>https://www.rockstargames.com/reddeadredemption2</url>
+            <img></img>
+        </game>
+        <game>
+            <name>Super Mario Odyssey</name>
+            <score>10/10</score>
+            <url>https://supermario.nintendo.com/</url>
+            <img></img>
+        </game>
+        <game>
+            <name>World of Warcraft</name>
+            <score>10/10</score>
+            <url>https://worldofwarcraft.blizzard.com/en-us/</url>
+            <img></img>
+        </game>
+    </menus>
+</site>
