@@ -1,24 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="index.xsl" ?>
+
 <site>
     <title>Yan Games Network</title>
     <menus>
         <game>
-            <name>Red Death Redemption 2</name>
-            <score>10/10</score>
+            <score>9</score>
             <url>https://www.rockstargames.com/reddeadredemption2</url>
-            <img></img>
+            <img>rdr2.jpg</img>
         </game>
         <game>
-            <name>Super Mario Odyssey</name>
-            <score>10/10</score>
+            <score>9</score>
             <url>https://supermario.nintendo.com/</url>
-            <img></img>
+            <img>odyssey.webp</img>
         </game>
         <game>
-            <name>World of Warcraft</name>
-            <score>10/10</score>
+            <score>10</score>
             <url>https://worldofwarcraft.blizzard.com/en-us/</url>
-            <img></img>
+            <img>leg.jpg</img>
         </game>
     </menus>
+    <contents>
+        <content>Explore Top Scores: Access real-time updates and leaderboards across popular games. Stay informed, stay
+            competitive.
+        </content>
+
+        <content>Player Profiles: Discover the strategies of top players. Learn, adapt, and elevate your game.
+        </content>
+    </contents>
+    <articles>
+        <article>
+            <img>news-gtv6.webp</img>
+            <title>GTA 6 becomes second most popular game trailer on YouTube</title>
+            <date>01/18/2024</date>
+            <summary>The GTA 6 trailer broke a couple of records after it dropped. For example, it became the
+                most-viewed non-music YouTube video in the initial 24-hour period, with over 90 million views. The first
+                trailer of Grand Theft Auto 6 has now taken over as the platform's second most popular game trailer,
+                surpassing the official Minecraft trailer...
+            </summary>
+            <url>https://www.notebookcheck.net/GTA-6-becomes-second-most-popular-game-trailer-on-YouTube.794414.0.html
+            </url>
+        </article>
+        <article>
+            <img>news-wow.jpg</img>
+            <title>Legendary World of Warcraft Item Getting New Weapon Type</title>
+            <date>01/15/2024</date>
+            <summary>An iconic World of Warcraft legendary is getting a brand-new weapon type in Seeds of Renewal, as
+                players will be able to obtain it in Patch 10.2.5...
+            </summary>
+            <url>https://gamerant.com/wow-thunderfury-bow-patch-10-2-5-leaks/</url>
+        </article>
+        <article>
+            <img>news-mhwild.jpeg</img>
+            <title>Capcom announces Monster Hunter Wilds for 2025</title>
+            <date>12/07/2023</date>
+            <summary>Things are about to get a little bit wild in the world of Monster Hunter. At The Game Awards this
+                evening, Capcom revealed the latest entry in the franchise: Monster Hunter Wilds....
+            </summary>
+            <url>https://www.theverge.com/23991181/monster-hunter-wilds-trailer-capcom-announce-trailer</url>
+        </article>
+    </articles>
 </site>

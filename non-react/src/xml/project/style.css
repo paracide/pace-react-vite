@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Oswald:wght@300;700&display=swap");
+
+.gradient-anime {
+    text-transform: uppercase;
+    background-image: linear-gradient(-225deg, #c6ffdd 0%, #fbd786 29%, #fffbd5 67%, #f7797d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% auto;
+    background-clip: text;
+    color: #fff;
+    animation: text-clip 4s linear infinite;
+}
+
+@keyframes text-clip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+h1 {
+    font-family: Caveat, sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+header, main, footer {
+    padding: 3vh 1vw;
+}
+
+header {
+    background-image: linear-gradient(to right, #141e30, #243b55);
+    height: 100vh;
+}
+
+header nav {
+    display: grid;
+    grid-template-columns: 1fr 5fr 5fr 5fr 1fr;
+    place-items: center;
+}
+
+header nav svg path {
+    fill: white;
+}
+
+header .game-card {
+    height: 70vh;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+header .game-card .game-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header .game-card .game-score {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgb(255, 85, 0);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+main h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+main .news {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+main .contents {
+    display: grid;
+    justify-items: center;
+    font-size: 1.2rem;
+}
+
+.news-card {
+    max-width: 300px;
+    margin: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.news-card .news-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.news-card .news-content {
+    padding: 15px;
+    background: white;
+}
+
+.news-card .news-content .news-title {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.news-card .news-content .news-summary {
+    margin: 0 0 15px 0;
+}
+
+.news-card .news-content .read-more {
+    color: rgb(255, 85, 0);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-card .news-content .news-url {
+    color: rgba(99, 98, 98, 0.78);
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
