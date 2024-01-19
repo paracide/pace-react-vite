@@ -15,7 +15,7 @@
             </head>
             <body>
                 <header>
-                    <h1 class="gradient-anime">Yan Game Network</h1>
+                    <h1 class="gradient-anime">Yan Game Network - Top Score Games</h1>
                     <nav>
                         <div>
                             <a href="index.html" class="arrow">
