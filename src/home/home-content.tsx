@@ -1,7 +1,7 @@
 import {Grid, Typography} from "@mui/material";
 
 
-function HomeContent() {
+export default function HomeContent() {
     return (
         <>
             <Typography variant='h2' align='center' color="textPrimary" gutterBottom>
@@ -11,9 +11,9 @@ function HomeContent() {
                 Hello Everyone This is a gallery about WDD code using React+Vite+Mui+Typescript
             </Typography>
             <Grid container spacing="3" justifyContent="center">
+                <Grid item></Grid>
             </Grid>
         </>
     )
 }
 
-export default HomeContent;
